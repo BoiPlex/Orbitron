@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dd4poyoss3hc"]
 
-[ext_resource type="Script" path="res://scripts/debris.gd" id="1_0so55"]
+[ext_resource type="Script" uid="uid://wkf0om5bqdy" path="res://scripts/debris.gd" id="1_0so55"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_maosd"]
 radius = 7.0
