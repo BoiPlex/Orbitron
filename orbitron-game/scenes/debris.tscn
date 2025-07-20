@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd4poyoss3hc"]
+
+[ext_resource type="Script" path="res://scripts/debris.gd" id="1_0so55"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maosd"]
+radius = 7.0
+
+[node name="Debris" type="CharacterBody2D"]
+script = ExtResource("1_0so55")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_maosd")
+debug_color = Color(0.887929, 0.328531, 0, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
