@@ -1,5 +1,7 @@
-class_name Debris
+class_name GravAffectedBody
 extends CharacterBody2D
+
+var display_path: bool
 
 func _ready() -> void:
 	pass
