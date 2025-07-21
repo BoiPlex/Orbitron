@@ -4,6 +4,7 @@ extends CharacterBody2D
 var display_path: bool
 var pulled_to_fields: Array[GravityField]
 
+
 func _ready() -> void:
 	pass
 	
@@ -13,6 +14,8 @@ func add_field(field: GravityField):
 		pulled_to_fields.push_back(field)
 	else:
 		push_warning("Tried to attach field to body already attached.")
+	#print(pulled_to_fields)
+	
 
 func remove_field(field: GravityField):
 	if pulled_to_fields.has(field):
