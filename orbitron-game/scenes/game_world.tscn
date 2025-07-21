@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://oyknd2asn"]
+[gd_scene load_steps=4 format=3 uid="uid://oyknd2asn"]
 
 [ext_resource type="Script" uid="uid://cw4xtacqgcrfu" path="res://scripts/game_manager.gd" id="1_nd3ib"]
 [ext_resource type="PackedScene" uid="uid://bhwtdd4b235yl" path="res://scenes/player.tscn" id="2_ag5ty"]
+[ext_resource type="PackedScene" uid="uid://cfscq1mloc52k" path="res://scenes/tower.tscn" id="3_ywgp6"]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource("1_nd3ib")
@@ -10,3 +11,6 @@ metadata/_custom_type_script = "uid://cw4xtacqgcrfu"
 [node name="Player" parent="." instance=ExtResource("2_ag5ty")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tower" parent="." instance=ExtResource("3_ywgp6")]
+position = Vector2(89, 0)

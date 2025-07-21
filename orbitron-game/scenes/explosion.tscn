@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b662fh35tcfm5"]
+
+[ext_resource type="Script" uid="uid://cae4mb6xry63n" path="res://scripts/explosion.gd" id="1_nfeox"]
+[ext_resource type="PackedScene" uid="uid://li3c1d3vqfqq" path="res://scenes/components/gravity_field.tscn" id="2_aw4cw"]
+[ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="3_3el85"]
+[ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="4_hbmxj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfoey"]
+resource_local_to_scene = true
+radius = 20.0
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_nfeox")
+
+[node name="GravityField" parent="." instance=ExtResource("2_aw4cw")]
+gravity_radius = 50.0
+is_anti_gravity = true
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("3_3el85")
+metadata/_custom_type_script = "uid://djiqi435icfju"
+
+[node name="ColoredCollider" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_xfoey")
+debug_color = Color(1, 0, 0, 0.5)
+script = ExtResource("4_hbmxj")
+metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"

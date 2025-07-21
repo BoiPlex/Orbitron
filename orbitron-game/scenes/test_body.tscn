@@ -10,7 +10,7 @@ resource_local_to_scene = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pmmw1"]
 resource_local_to_scene = true
-radius = 29.0689
+radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nkstd"]
 resource_local_to_scene = true

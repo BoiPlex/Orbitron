@@ -14,7 +14,7 @@ func _unhandled_input(event):
 				_dev_click_mode = 0
 			print("Toggling to ", DevClickMode.keys()[_dev_click_mode])
 			
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 		var click_position = get_global_mouse_position()
 			
 		if _dev_click_mode == DevClickMode.STILL:

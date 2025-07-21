@@ -15,6 +15,10 @@ func _ready() -> void:
 	if dev_mode:
 		init_debug_spawner()
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		var explosion = load("res://scenes/test_body.tscn")
+		
 
 func init_debug_spawner():
 	_debug_spawner = DebugBodyFactory.new()

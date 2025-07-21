@@ -7,7 +7,7 @@ extends Area2D
 	set(value):
 		gravity_radius = value
 		_update_gravity_radius()
-
+@export var is_anti_gravity: bool = false
 
 func _ready():
 	connect("body_entered", _on_body_entered)
