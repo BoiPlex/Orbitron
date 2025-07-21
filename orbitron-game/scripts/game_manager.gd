@@ -32,7 +32,7 @@ func _unhandled_input(event):
 		elif _dev_click_mode == DevClickMode.ORBITAL:
 			var dir_to_planet = player.global_position - click_position
 			var distance = dir_to_planet.length()
-			var speed = sqrt(player.gravity_strength / max(distance, 1.0))
+			var speed = sqrt(player.gravity_field.gravity_strength / max(distance, 1.0))
 			var tangent = Vector2(-dir_to_planet.y, dir_to_planet.x).normalized()
 			spawn_debris(click_position, tangent * speed)
 

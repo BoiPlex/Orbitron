@@ -1,5 +1,7 @@
-class_name Debris
+class_name GravityObject
 extends CharacterBody2D
+
+var mass: float = 10
 
 func _ready() -> void:
 	pass
