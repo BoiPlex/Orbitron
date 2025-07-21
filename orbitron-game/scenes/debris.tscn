@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd4poyoss3hc"]
+[gd_scene load_steps=4 format=3 uid="uid://dd4poyoss3hc"]
+
 
 [ext_resource type="Script" uid="uid://wkf0om5bqdy" path="res://scripts/grav_affected_body.gd" id="1_0so55"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_maosd"]
 radius = 7.0
@@ -13,3 +15,6 @@ shape = SubResource("CircleShape2D_maosd")
 debug_color = Color(0.887929, 0.328531, 0, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="GravityField" parent="." instance=ExtResource("2_s4vdx")]
+gravity_radius = 30.0

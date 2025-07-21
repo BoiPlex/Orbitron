@@ -1,19 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://mitaqhjplwf"]
 
+
 [ext_resource type="Script" uid="uid://6vem6c2qqgi3" path="res://scripts/player.gd" id="1_ohywo"]
 [ext_resource type="Script" uid="uid://cmp2fjq5k8o8q" path="res://scripts/player_hurt_box.gd" id="2_723kp"]
 [ext_resource type="Script" uid="uid://dooqnerbe4uml" path="res://scripts/components/gravity_field.gd" id="3_qhqgy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tnbd7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 20.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gcvop"]
-radius = 100.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_tnbd7"]
+radius = 22.0
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="StaticBody2D"]
 script = ExtResource("1_ohywo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2els")
+debug_color = Color(0.095826, 1.3621e-05, 0.406304, 0.42)
 
 [node name="PlayerHurtBox" type="Area2D" parent="."]
 script = ExtResource("2_723kp")
@@ -27,3 +32,4 @@ script = ExtResource("3_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravityField"]
 shape = SubResource("CircleShape2D_gcvop")
+

@@ -3,8 +3,8 @@ extends Area2D
 
 
 func _init() -> void: 
-	set_collision_layer_value(1, true)
-	set_collision_mask_value(3, true) # Detect enemy hitboxes
+	#set_collision_layer_value(1, true)
+	#set_collision_mask_value(3, true) # Detect enemy hitboxes
 	area_entered.connect(_on_area_entered)
 
 
