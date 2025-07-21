@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6g7jumv1icbe"]
 
-[ext_resource type="Script" uid="uid://wkf0om5bqdy" path="res://scripts/grav_affected_body.gd" id="1_785tj"]
+[ext_resource type="Script" uid="uid://wkf0om5bqdy" path="res://scripts/bodies/grav_affected_body.gd" id="1_785tj"]
 [ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="2_md0bj"]
 [ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="3_785tj"]
 [ext_resource type="Script" uid="uid://bsmkv7habdqi5" path="res://scripts/components/hurtbox_component.gd" id="3_pmmw1"]
