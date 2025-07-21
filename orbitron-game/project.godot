@@ -11,6 +11,9 @@ config_version=5
 [application]
 
 config/name="Orbitron"
-run/main_scene="res://scenes/game_world.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ColorGlobal="*res://scripts/color_global.gd"

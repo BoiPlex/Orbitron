@@ -1,6 +1,7 @@
 class_name GravAffectedBody
 extends CharacterBody2D
 
+@export var mass: float = 10
 var display_path: bool
 var pulled_to_fields: Array[GravityField]
 

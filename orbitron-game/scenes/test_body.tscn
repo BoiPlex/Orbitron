@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6g7jumv1icbe"]
+
+[ext_resource type="PackedScene" uid="uid://li3c1d3vqfqq" path="res://scenes/components/gravity_field.tscn" id="1_l60tp"]
+[ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="2_md0bj"]
+[ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="3_785tj"]
+[ext_resource type="Script" uid="uid://bsmkv7habdqi5" path="res://scripts/components/hurtbox_component.gd" id="3_pmmw1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_785tj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pmmw1"]
+radius = 29.0689
+
+[node name="TestBody" type="Node2D"]
+
+[node name="GravityField" parent="." instance=ExtResource("1_l60tp")]
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+script = ExtResource("2_md0bj")
+metadata/_custom_type_script = "uid://djiqi435icfju"
+
+[node name="ColoredCollider" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_785tj")
+debug_color = Color(1, 0, 0, 0.5)
+script = ExtResource("3_785tj")
+metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
+
+[node name="HurtboxComponent" type="Area2D" parent="."]
+script = ExtResource("3_pmmw1")
+
+[node name="ColoredCollider" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CircleShape2D_pmmw1")
+debug_color = Color(1, 0.742, 0.14, 0.5)
+script = ExtResource("3_785tj")
+metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
