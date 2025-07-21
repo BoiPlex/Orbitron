@@ -12,4 +12,3 @@ debris_scene = ExtResource("3_c2lgw")
 zoom = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("2_ag5ty")]
-gravity_strength = 50000.0

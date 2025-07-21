@@ -1,8 +1,6 @@
 class_name PlayerHurtBox
 extends Area2D
 
-@onready var player: Player = get_parent()
-
 
 func _init() -> void: 
 	set_collision_layer_value(1, true)
