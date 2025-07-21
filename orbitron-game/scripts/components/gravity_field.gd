@@ -20,14 +20,14 @@ func _on_body_entered(body: Node):
 		body.add_field(self)
 
 
-func _update_gravity_radius():
-	if !is_inside_tree():
-		return
-	var shape_node = $CollisionShape2D
-	if shape_node and shape_node.shape is CircleShape2D:
-		shape_node.shape.radius = gravity_radius
-
-
 func _on_body_exited(body: Node):
 	if body is GravAffectedBody:
 		body.remove_field(self)
+
+
+func _update_gravity_radius():
+	if !is_inside_tree():
+		return
+	var shape_node = $ColoredCollider
+	if shape_node and shape_node.shape is CircleShape2D:
+		shape_node.shape.radius = gravity_radius

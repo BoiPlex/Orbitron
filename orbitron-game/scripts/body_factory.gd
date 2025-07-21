@@ -8,9 +8,9 @@ extends Node2D
 var _grav_body_list: Array[GravAffectedBody] = []
 
 
-func make_body(position: Vector2, velocity: Vector2):
+func make_body(pos: Vector2, velocity: Vector2):
 	var grav_body = body_scene.instantiate() as GravAffectedBody
-	grav_body.global_position = position
+	grav_body.global_position = pos
 	grav_body.velocity = velocity
 	_grav_body_list.push_back(grav_body)
 	parent.add_child(grav_body)

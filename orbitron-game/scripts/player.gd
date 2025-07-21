@@ -1,5 +1,5 @@
 class_name Player
-extends Node2D
+extends StaticBody2D
 
 @onready var gravity_field: GravityField = $GravityField
 

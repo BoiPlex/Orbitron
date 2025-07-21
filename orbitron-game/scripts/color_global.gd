@@ -8,6 +8,7 @@ enum Type {
 	GRAVITY,
 	DEBUG_HITBOX,
 	DEBUG_HURTBOX,
+	DEBUG_COLLISION,
 }
 
 const type_color: Dictionary[Type, Color] = {
@@ -18,4 +19,5 @@ const type_color: Dictionary[Type, Color] = {
 	Type.GRAVITY: Color(0.0, 0.467, 1.0),
 	Type.DEBUG_HITBOX: Color(1.0, 0.0, 0.0),
 	Type.DEBUG_HURTBOX: Color(1.0, 0.742, 0.14),
+	Type.DEBUG_COLLISION: Color(0.781, 0.442, 0.486)
 }

@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://li3c1d3vqfqq"]
+[gd_scene load_steps=4 format=3 uid="uid://li3c1d3vqfqq"]
 
 [ext_resource type="Script" uid="uid://dooqnerbe4uml" path="res://scripts/components/gravity_field.gd" id="1_jc524"]
+[ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="2_dfk4e"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wpfcc"]
-resource_local_to_scene = true
-radius = 400.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_13ix6"]
 
 [node name="GravityField" type="Area2D"]
 script = ExtResource("1_jc524")
+gravity_strength = 50000.0
+gravity_radius = 100.0
 metadata/_custom_type_script = "uid://dooqnerbe4uml"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_wpfcc")
+[node name="ColoredCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_13ix6")
+debug_color = Color(0, 0.467, 1, 0.5)
+script = ExtResource("2_dfk4e")
+metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
