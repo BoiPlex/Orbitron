@@ -3,7 +3,6 @@ extends Area2D
 
 signal hit
 
-const col_type = ColorGlobal.Type.DEBUG_HITBOX
 
 @export var damage: int
 var parent: CharacterBody2D
