@@ -1,7 +1,7 @@
 class_name GamePhysicsBody
 extends CharacterBody2D
 
-@export var mass = 10
+@export var mass: float = 10
 
 var direction: Vector2
 
