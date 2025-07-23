@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtctqoljyo3o3"]
 
-[ext_resource type="Script" uid="uid://bbl5ggl7enrfh" path="res://scripts/bodies/game_physics_body.gd" id="1_softn"]
+[ext_resource type="Script" uid="uid://c7cq1q0lnaglc" path="res://scripts/bodies/projectile.gd" id="1_softn"]
 [ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="2_6q2a6"]
 [ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="3_byeak"]
 
@@ -10,7 +10,7 @@
 
 [node name="Projectile" type="CharacterBody2D"]
 script = ExtResource("1_softn")
-metadata/_custom_type_script = "uid://bbl5ggl7enrfh"
+metadata/_custom_type_script = "uid://c7cq1q0lnaglc"
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jxwu6")

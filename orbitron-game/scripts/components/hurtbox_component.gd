@@ -1,10 +1,13 @@
 class_name HurtboxComponent
 extends Area2D
 
-signal dead
 
-@export var max_health: int = 100
+@export var max_health: int = 100	
+
 var health: int = 100
+
+@onready var parent = get_parent() as GamePhysicsBody
+
 
 func _ready() -> void:
 	health = max_health
@@ -14,7 +17,8 @@ func _ready() -> void:
 func take_damage(damage: int):
 	health = clampi(health - damage, 0, max_health)
 	if health == 0:
-		dead.emit()
+		parent.init_kill.emit()
+			
 
 
 func _on_area_entered(area: Area2D) -> void:
