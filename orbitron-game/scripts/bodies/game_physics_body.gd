@@ -7,7 +7,7 @@ signal init_kill
 
 @export var pushable: bool = true
 @export var mass: float = 10
-@export var make_on_kill: Array
+@export var make_on_kill: Array[Factory]
 
 var direction: Vector2
 
@@ -35,4 +35,5 @@ func _on_hurtbox_contact(sender: HitboxComponent):
 
 
 func _kill():
-	pass
+	for factory in make_on_kill:
+		factory.make()

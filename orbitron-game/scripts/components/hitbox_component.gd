@@ -3,7 +3,7 @@ extends Area2D
 
 @export var damage: int
 
-@onready var parent = get_parent() as GamePhysicsBody
+@onready var parent = get_parent()
 
 
 func _ready():
@@ -12,4 +12,5 @@ func _ready():
 
 func _on_area_entered(area: Area2D):
 	if area is HurtboxComponent:
-		parent.hitbox_contact.emit()
+		if parent is GamePhysicsBody:
+			parent.hitbox_contact.emit()

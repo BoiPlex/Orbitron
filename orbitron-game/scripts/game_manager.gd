@@ -32,7 +32,7 @@ func _input(event: InputEvent) -> void:
 
 func init_debug_spawner():
 	_debug_spawner = DebugBodyFactory.new()
-	_debug_spawner.body_scene = load("res://scenes/test_body.tscn")
+	_debug_spawner.base_scene = load("res://scenes/test_body.tscn")
 	_debug_spawner.parent = self
 	_debug_spawner.player = player
 	add_child(_debug_spawner)

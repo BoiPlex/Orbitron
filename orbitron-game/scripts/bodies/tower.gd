@@ -1,7 +1,11 @@
 class_name Tower
 extends GravAffectedBody
 
+
+
 @onready var player: Player = $"../Player"
+
+var target: Node2D
 
 func _ready() -> void:
 	pass

@@ -5,18 +5,11 @@ extends Node2D
 @export var parent: Node
 @export var class_stats: PhysicsBodyStats
 
+@export var make_position: Vector2 = Vector2.ZERO
+@export var random_launch_direction: bool
+@export var launch_direction: Vector2 = Vector2.ONE
+@export var launch_speed: float
+
 
 func make():
-	pass
-	
-	
-func launch(_init_velocity: Vector2):
-	pass
-	
-
-func make_location(_pos: Vector2):
-	pass
-
-
-func launch_location(_pos: Vector2, _init_velocity: Vector2):
 	pass

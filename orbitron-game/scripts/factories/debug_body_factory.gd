@@ -15,19 +15,19 @@ func _unhandled_input(event):
 			print("Toggling to ", DevClickMode.keys()[_dev_click_mode])
 			
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
-		var click_position = get_global_mouse_position()
+		make_position = get_global_mouse_position()
 			
 		if _dev_click_mode == DevClickMode.STILL:
-			launch_location(click_position, Vector2.ZERO)
+			launch_speed = 0
+			make()
 		elif _dev_click_mode == DevClickMode.DIRECT:
-			var direct_speed = 7
-			var dir_to_planet = player.global_position - click_position
-			var direct_velocity = direct_speed * dir_to_planet.normalized()
-			launch_location(click_position, direct_velocity)
+			launch_speed = 7
+			launch_direction = player.global_position - make_position
+			make()
 		elif _dev_click_mode == DevClickMode.ORBITAL:
-			var dir_to_planet = player.global_position - click_position
+			var dir_to_planet = player.global_position - make_position
 			var distance = dir_to_planet.length()
-			var speed = sqrt(player.gravity_field.gravity_strength / max(distance, 1.0))
-			var tangent = Vector2(-dir_to_planet.y, dir_to_planet.x).normalized()
-			launch_location(click_position, tangent * speed)
+			launch_speed = sqrt(player.gravity_field.gravity_strength / max(distance, 1.0))
+			launch_direction = Vector2(-dir_to_planet.y, dir_to_planet.x).normalized()
+			make()
 			
