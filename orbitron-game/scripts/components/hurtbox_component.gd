@@ -4,13 +4,11 @@ extends Area2D
 
 @export var max_health: int = 100	
 
-var health: int = 100
-
+@onready var health: int = 100
 @onready var parent = get_parent() as GamePhysicsBody
 
 
 func _ready() -> void:
-	health = max_health
 	area_entered.connect(_on_area_entered)
 
 

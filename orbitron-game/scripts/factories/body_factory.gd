@@ -1,15 +1,12 @@
 class_name GravBodyFactory
-extends Node2D
-
-@export var body_scene: PackedScene
-@export var parent: Node
+extends Factory
 
 
 var _grav_body_list: Array[GravAffectedBody] = []
 
 
-func make_body(pos: Vector2, velocity: Vector2):
-	var grav_body = body_scene.instantiate() as GravAffectedBody
+func launch_location(pos: Vector2, velocity: Vector2):
+	var grav_body = base_scene.instantiate() as GravAffectedBody
 	grav_body.global_position = pos
 	grav_body.velocity = velocity
 	_grav_body_list.push_back(grav_body)

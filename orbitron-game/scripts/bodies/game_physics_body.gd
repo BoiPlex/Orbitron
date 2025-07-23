@@ -7,8 +7,11 @@ signal init_kill
 
 @export var pushable: bool = true
 @export var mass: float = 10
+@export var make_on_kill: Array
 
 var direction: Vector2
+
+var _no_kill: bool = false
 
 
 func _ready():
@@ -21,7 +24,7 @@ func force_push(push_dir: Vector2, force: float):
 	velocity += push_dir.normalized() * force / mass
 
 
-func _on_hitbox_contact(receiver: HurtboxComponent):
+func _on_hitbox_contact(_receiver: HurtboxComponent):
 	pass
 
 
