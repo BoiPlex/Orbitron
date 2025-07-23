@@ -52,3 +52,6 @@ metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = SubResource("GradientTexture2D_jfguu")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
