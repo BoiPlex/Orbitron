@@ -1,8 +1,7 @@
 class_name Tower
 extends GravAffectedBody
 
-
-
+@export var fire_factories: Array[Factory]
 @onready var player: Player = $"../Player"
 
 var target: Node2D
