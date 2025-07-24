@@ -1,4 +1,4 @@
-class_name GameManager
+class_name GameWorld
 extends Node2D
 
 @export var dev_mode: bool = true

@@ -6,7 +6,7 @@ extends Area2D
 
 var health: int = 100
 
-@onready var parent = get_parent() as GamePhysicsBody
+@onready var parent = get_parent()
 @onready var collider = $ColoredCollider as CollisionShape2D
 
 
