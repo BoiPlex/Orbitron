@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=4 format=3 uid="uid://b8uskbgmywfcl"]
+
+[ext_resource type="Resource" uid="uid://s0olcfmcwr81" path="res://resources/repulsor_projectile.tres" id="1_3n4p1"]
+[ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="2_naraj"]
+[ext_resource type="Resource" uid="uid://bjdegyhfny7mk" path="res://resources/repulsor_tower_III.tres" id="3_naraj"]
+
+[resource]
+script = ExtResource("2_naraj")
+upgrades_to = ExtResource("3_naraj")
+cost = 100
+projectile = ExtResource("1_3n4p1")
+fire_rate = 0.3
+spread_copies = 6
+spread_angle = 0.15
+bursts = 1
+burst_interval = 0.0
+detection_range = 100.0
+entity_name = ""
+max_health = 200
+contact_damage = 10
+contact_knockback = 1.0
+mass = 50.0
+metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"

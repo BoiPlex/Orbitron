@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="TowerStats" load_steps=3 format=3 uid="uid://buuvvd74r2kkp"]
+[gd_resource type="Resource" script_class="TowerStats" load_steps=4 format=3 uid="uid://buuvvd74r2kkp"]
 
 [ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="1_7g755"]
 [ext_resource type="Resource" uid="uid://s0olcfmcwr81" path="res://resources/repulsor_projectile.tres" id="1_dd3ta"]
+[ext_resource type="Resource" uid="uid://b8uskbgmywfcl" path="res://resources/repulsor_tower_II.tres" id="3_3ig1v"]
 
 [resource]
 script = ExtResource("1_7g755")
+upgrades_to = ExtResource("3_3ig1v")
 cost = 100
 projectile = ExtResource("1_dd3ta")
-fire_rate = 0.3
-spread_copies = 3
-spread_angle = 1.0
+fire_rate = 0.4
+spread_copies = 2
+spread_angle = 0.1
 bursts = 1
 burst_interval = 0.0
 detection_range = 100.0

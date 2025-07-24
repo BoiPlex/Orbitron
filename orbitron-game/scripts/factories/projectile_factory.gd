@@ -44,7 +44,8 @@ func _init_burst():
 
 func _init_spread():
 	_working_spread = 0
-	if copies % 2 == 0:
+	_remaining_copies = copies
+	if _remaining_copies % 2 == 0:
 		_working_spread += spread / 2
 		make()
 		_working_spread *= -1
@@ -67,6 +68,7 @@ func make():
 	make_position = global_position
 	launch_speed = proj_stats.initial_speed
 	launch_direction = _center_axis.rotated(_working_spread)
+	print(launch_direction)
 	ReferencesGlobal.projectile_pool.request_projectile.emit(
 		make_position, launch_direction * launch_speed, proj_stats
 	)

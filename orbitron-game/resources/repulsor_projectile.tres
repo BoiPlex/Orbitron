@@ -7,7 +7,7 @@
 script = ExtResource("1_xnrxp")
 initial_speed = 100.0
 destroy_on_hit = false
-lifetime = 4.0
+lifetime = 2.0
 sprite_texture = ExtResource("2_7eogl")
 entity_name = ""
 max_health = 100
