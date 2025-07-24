@@ -51,11 +51,11 @@ func _init_spread():
 			
 			
 func make():
-	var proj = base_scene.instantiate() as Projectile
 	var proj_stats = class_stats as ProjectileStats
-	proj.init_game_entity(class_stats)
-	proj.init_projectile(class_stats)
 	make_position = global_position
-	proj.global_position = make_position
-	proj.velocity = _center_axis.rotated(_working_spread) * proj_stats.initial_speed
+	launch_speed = proj_stats.initial_speed
+	launch_direction = _center_axis.rotated(_working_spread)
+	ReferencesGlobal.projectile_pool.request_projectile.emit(
+		make_position, launch_direction * launch_speed
+	)
 	
