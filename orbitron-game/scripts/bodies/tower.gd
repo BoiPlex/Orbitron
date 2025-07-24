@@ -13,6 +13,8 @@ var target_dir: Vector2 = Vector2.ZERO
 
 var upgrades_to: TowerStats
 
+var fire_rate: float = 1.0
+
 var _state: States = States.STANDBY
 
 @onready var player: Player = $"../Player"
@@ -23,7 +25,7 @@ func _ready() -> void:
 
 
 func init_tower(stats: TowerStats):
-	
+	upgrades_to = stats.upgrades_to
 	pass
 
 

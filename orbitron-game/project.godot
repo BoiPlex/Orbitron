@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ColorGlobal="*res://scripts/color_global.gd"
 TeamsGlobal="*res://scripts/teams_global.gd"
+ReferencesGlobal="*res://scripts/references_global.gd"
 
 [display]
 

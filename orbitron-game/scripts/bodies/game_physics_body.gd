@@ -10,10 +10,10 @@ signal init_kill
 @export var mass: float = 10
 @export var make_on_kill: Array[Factory]
 
-@onready var sprite = $Sprite2D as Sprite2D
-@onready var hitbox = $HitboxComponent as HitboxComponent
-@onready var hurtbox = $HurtboxComponent as HurtboxComponent
-@onready var collider = $ColoredCollider as CollisionShape2D
+@onready var sprite = get_node_or_null("Sprite2D") as Sprite2D
+@onready var hitbox = get_node_or_null("$HitboxComponent") as HitboxComponent
+@onready var hurtbox = get_node_or_null("$HurtboxComponent") as HurtboxComponent
+@onready var collider = get_node_or_null("$ColoredCollider") as CollisionShape2D
 
 var direction: Vector2
 

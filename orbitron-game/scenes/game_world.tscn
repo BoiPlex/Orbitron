@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://oyknd2asn"]
+[gd_scene load_steps=6 format=3 uid="uid://oyknd2asn"]
 
 [ext_resource type="Script" uid="uid://cw4xtacqgcrfu" path="res://scripts/game_manager.gd" id="1_nd3ib"]
 [ext_resource type="PackedScene" uid="uid://bhwtdd4b235yl" path="res://scenes/player.tscn" id="2_ag5ty"]
 [ext_resource type="PackedScene" uid="uid://cfscq1mloc52k" path="res://scenes/tower.tscn" id="3_ywgp6"]
 [ext_resource type="PackedScene" uid="uid://c6g7jumv1icbe" path="res://scenes/test_body.tscn" id="4_0vfqx"]
+[ext_resource type="Script" uid="uid://di750aidn8r6w" path="res://scripts/projectile_pool.gd" id="5_wbbl4"]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource("1_nd3ib")
@@ -30,3 +31,7 @@ position = Vector2(414, -33)
 
 [node name="TestBody3" parent="." instance=ExtResource("4_0vfqx")]
 position = Vector2(377, -31)
+
+[node name="ProjectilePool" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_wbbl4")
