@@ -14,6 +14,7 @@ var _index: int = 0
 func _ready():
 	init_pool()
 	set_active_pool()
+	request_projectile.connect(_on_request_projectile)
 
 
 func set_active_pool():
@@ -29,6 +30,7 @@ func init_pool():
 
 
 func _on_request_projectile(pos: Vector2, velocity: Vector2, stats: ProjectileStats):
+	print(velocity)
 	var proj = _pool[_index]
 	if not proj.disabled:
 		proj.disable()

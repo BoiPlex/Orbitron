@@ -11,5 +11,5 @@ extends Area2D
 
 
 func _ready():
-	collision_layer = TeamsGlobal.teamHurtbox[team].x
-	collision_mask = TeamsGlobal.teamHurtbox[team].y
+	collision_layer = TeamsGlobal.teamHitbox[team].x
+	collision_mask = TeamsGlobal.teamHitbox[team].y

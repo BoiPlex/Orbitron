@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=2 format=3 uid="uid://cs2ho6uqdkqa3"]
+
+[ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="1_i0gep"]
+
+[resource]
+script = ExtResource("1_i0gep")
+cost = 100
+fire_rate = 1.0
+detection_range = 200.0
+entity_name = ""
+max_health = 100
+contact_damage = 10
+mass = 10.0
+metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"

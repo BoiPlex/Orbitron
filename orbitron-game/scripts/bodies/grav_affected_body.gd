@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	for field in pulled_to_fields:
 		var dir_to_center = field.global_position - global_position
 		var distance = dir_to_center.length()
-		var gravity_force = field.gravity_strength / max(distance * distance, 1.0)
+		var gravity_force = field.gravity_strength / min(distance * distance, 1.0)
 		if field.is_anti_gravity:
 			gravity_force *= -1
 		var velocity_change = dir_to_center.normalized() * gravity_force * delta

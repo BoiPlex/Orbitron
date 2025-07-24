@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ProjectileStats" load_steps=3 format=3 uid="uid://bal7popik6k7r"]
+
+[ext_resource type="Script" uid="uid://bdl3ke2ju4jip" path="res://scripts/resources/projectile_stats_template.gd" id="1_tgpor"]
+[ext_resource type="Texture2D" uid="uid://1gfdlpqbdq6i" path="res://icon.svg" id="2_fm77b"]
+
+[resource]
+script = ExtResource("1_tgpor")
+initial_speed = 200.0
+destroy_on_hit = true
+lifetime = 5.0
+sprite_texture = ExtResource("2_fm77b")
+entity_name = "AllyProj"
+max_health = 100
+contact_damage = 50
+mass = 10.0
+metadata/_custom_type_script = "uid://bdl3ke2ju4jip"

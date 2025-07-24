@@ -37,10 +37,10 @@ func init_team(team: TeamsGlobal.Team):
 
 
 func init_game_entity(stats: PhysicsBodyStats):
-	entity_name = stats.name
+	entity_name = stats.entity_name
 	mass = stats.mass
 	if sprite != null:
-		sprite.texture = stats.sprite
+		sprite.texture = stats.sprite_texture
 	if hurtbox != null:
 		hurtbox.max_health = stats.max_health
 		hurtbox.health = stats.max_health
@@ -72,3 +72,7 @@ func _kill():
 		for factory in make_on_kill:
 			factory.make()
 	queue_free()
+	
+
+func _physics_process(delta):
+	move_and_slide()

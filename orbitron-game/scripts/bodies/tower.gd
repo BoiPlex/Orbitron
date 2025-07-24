@@ -8,7 +8,15 @@ enum States {
 	STANDBY,
 }
 
+enum Orbit {
+	CW,
+	CCW,
+}
+
+@export var build_template: TowerStats = null
 @export var projectile_factory: ProjectileFactory
+@export var orbit_speed: float = 40
+@export var orbit: Orbit = Orbit.CW
 
 var target_list: Array[Node2D]
 var target: Node2D
@@ -34,6 +42,10 @@ func _ready() -> void:
 	add_child(_fire_timer)
 	detection.area_entered.connect(_on_add_target)
 	detection.area_exited.connect(_on_remove_target)
+	target_check.connect(_on_target_check)
+	if build_template != null:
+		init_tower(build_template)
+		init_game_entity(build_template)
 
 
 func init_tower(stats: TowerStats):
@@ -49,6 +61,10 @@ func init_tower(stats: TowerStats):
 		detection.radius = stats.detection_range
 	if projectile_factory != null:
 		projectile_factory.class_stats = stats.projectile
+		projectile_factory.copies = stats.spread_copies
+		projectile_factory.spread = stats.spread_angle
+		projectile_factory.bursts = stats.bursts
+		projectile_factory.burst_interval = stats.burst_interval
 
 
 func upgrade():
@@ -59,6 +75,7 @@ func upgrade():
 
 
 func _fire():
+	#print("fire!!!!")
 	projectile_factory.launch_direction = target_dir
 	projectile_factory.fire()
 
@@ -81,7 +98,11 @@ func _on_target_check():
 		if new_dist < min_dist:
 			closest = node
 			min_dist = new_dist
-	target = closest
+	if closest == null:
+		_state = States.STANDBY
+	else:
+		target = closest
+		_state = States.ACTIVE
 
 
 func _physics_process(delta: float) -> void:
@@ -90,10 +111,10 @@ func _physics_process(delta: float) -> void:
 	# Auto correct to stable orbit
 	var dir_to_planet = player.global_position - global_position
 	var distance = dir_to_planet.length()
-	var speed = sqrt(player.gravity_field.gravity_strength / max(distance, 1.0))
-	var tangent = Vector2(-dir_to_planet.y, dir_to_planet.x).normalized()
-	var desired_velocity = tangent * speed
-	velocity = lerp(velocity, desired_velocity, 1 - pow(0.25, delta))
+	var tangent = (Vector2(-dir_to_planet.y, dir_to_planet.x).normalized() if 
+		orbit == Orbit.CCW else Vector2(dir_to_planet.y, -dir_to_planet.x).normalized())
+	var desired_velocity = tangent * orbit_speed
+	velocity = lerp(velocity, desired_velocity, 1 - pow(0.25, 13 * delta))
 	
 	if _state == States.ACTIVE:
 		target_dir = (target.global_position - global_position).normalized()

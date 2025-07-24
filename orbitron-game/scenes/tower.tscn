@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cfscq1mloc52k"]
+[gd_scene load_steps=14 format=3 uid="uid://cfscq1mloc52k"]
 
 [ext_resource type="Script" uid="uid://bact5q3bmxsrh" path="res://scripts/bodies/tower.gd" id="1_qrbg1"]
 [ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="2_jfguu"]
+[ext_resource type="Resource" uid="uid://grck8mtpfay0" path="res://resources/shoot_tower_I.tres" id="2_xl0gn"]
 [ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="3_85u2j"]
 [ext_resource type="Script" uid="uid://bsmkv7habdqi5" path="res://scripts/components/hurtbox_component.gd" id="4_xl0gn"]
 [ext_resource type="Script" uid="uid://bhkkdgseo08jf" path="res://scripts/components/detection_component.gd" id="5_jfguu"]
@@ -25,8 +26,10 @@ gradient = SubResource("Gradient_qrbg1")
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfguu"]
 radius = 111.0
 
-[node name="Tower" type="CharacterBody2D"]
+[node name="Tower" type="CharacterBody2D" node_paths=PackedStringArray("projectile_factory")]
 script = ExtResource("1_qrbg1")
+build_template = ExtResource("2_xl0gn")
+projectile_factory = NodePath("ProjectileFactory")
 metadata/_custom_type_script = "uid://wkf0om5bqdy"
 
 [node name="HitboxComponent" type="Area2D" parent="."]

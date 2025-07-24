@@ -1,13 +1,22 @@
-[gd_resource type="Resource" script_class="TowerStats" load_steps=2 format=3 uid="uid://grck8mtpfay0"]
+[gd_resource type="Resource" script_class="TowerStats" load_steps=4 format=3 uid="uid://grck8mtpfay0"]
 
 [ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="1_7qfe8"]
+[ext_resource type="Resource" uid="uid://bal7popik6k7r" path="res://resources/basic_ally_proj.tres" id="1_ey7u4"]
+[ext_resource type="Resource" uid="uid://cs2ho6uqdkqa3" path="res://resources/shoot_tower_II.tres" id="3_bc5ax"]
 
 [resource]
 script = ExtResource("1_7qfe8")
-max_health = 100
-mass = 10
-tier = 0
+upgrades_to = ExtResource("3_bc5ax")
 cost = 100
-fire_rate = 0.0
-detection_range = 0.0
+projectile = ExtResource("1_ey7u4")
+fire_rate = 1.0
+spread_copies = 8
+spread_angle = 0.0
+bursts = 1
+burst_interval = 0.0
+detection_range = 200.0
+entity_name = "Gunner I"
+max_health = 100
+contact_damage = 10
+mass = 10.0
 metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"
