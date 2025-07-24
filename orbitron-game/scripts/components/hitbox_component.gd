@@ -15,7 +15,6 @@ func _ready():
 
 
 func _on_area_entered(area: Area2D):
-	print("asdfasdfasdfsadf")
 	if area is HurtboxComponent and area.get_parent() != parent:
 		if parent is GamePhysicsBody:
 			parent.hitbox_contact.emit(area)
