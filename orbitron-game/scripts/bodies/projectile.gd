@@ -20,8 +20,8 @@ func _ready():
 func disable():
 	visible = false
 	if hitbox:
-		hitbox.monitorable = false
-		hitbox.monitoring = false
+		hitbox.set_deferred("monitorable", false)
+		hitbox.set_deferred("monitoring", false)
 	set_deferred("process_mode", PROCESS_MODE_DISABLED)
 	disabled = true
 
@@ -29,10 +29,11 @@ func disable():
 func enable():
 	visible = true
 	if hitbox:
-		hitbox.monitorable = true
-		hitbox.monitoring = true
+		hitbox.set_deferred("monitorable", true)
+		hitbox.set_deferred("monitoring", true)
 	set_deferred("process_mode", PROCESS_MODE_INHERIT)
 	disabled = false
+	lifetime_timer.start(initial_lifetime)
 
 
 func init_projectile(stats: ProjectileStats):

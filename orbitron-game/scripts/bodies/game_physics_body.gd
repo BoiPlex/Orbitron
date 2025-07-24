@@ -14,9 +14,9 @@ const TERMINAL_VELOCITY = 20
 @export var make_on_kill: Array[Factory]
 
 @onready var sprite = get_node_or_null("Sprite2D") as Sprite2D
-@onready var hitbox = get_node_or_null("$HitboxComponent") as HitboxComponent
-@onready var hurtbox = get_node_or_null("$HurtboxComponent") as HurtboxComponent
-@onready var collider = get_node_or_null("$ColoredCollider") as CollisionShape2D
+@onready var hitbox = get_node_or_null("HitboxComponent") as HitboxComponent
+@onready var hurtbox = get_node_or_null("HurtboxComponent") as HurtboxComponent
+@onready var collider = get_node_or_null("ColoredCollider") as CollisionShape2D
 
 var direction: Vector2
 
@@ -46,6 +46,7 @@ func init_game_entity(stats: PhysicsBodyStats):
 		hurtbox.health = stats.max_health
 	if hitbox != null:
 		hitbox.damage = stats.contact_damage
+	contact_knockback = stats.contact_knockback
 
 
 func force_push(push_dir: Vector2, force: float):
@@ -57,14 +58,14 @@ func _on_hitbox_contact(receiver: HurtboxComponent):
 	var target = receiver.parent
 	if pushable and target is GamePhysicsBody:
 		force_push(target.global_position.direction_to(global_position), 
-			(target.velocity.length() / 2 + target.contact_knockback) * target.mass)
+			target.velocity.length() / 4  * target.mass)
 
 
 func _on_hurtbox_contact(sender: HitboxComponent):
 	var target = sender.parent
 	if pushable and target is GamePhysicsBody:
 		force_push(target.global_position.direction_to(global_position), 
-			(target.velocity.length() / 2 + target.contact_knockback) * target.mass)
+			(target.velocity.length() / 4) * target.mass + target.contact_knockback)
 
 
 func _kill():

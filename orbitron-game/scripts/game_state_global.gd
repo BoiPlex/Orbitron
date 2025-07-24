@@ -25,11 +25,6 @@ func get_active_world() -> GameWorld:
 	return _active_world
 
 
-func _init_game():
-	_money = 0
-	world_health = WORLD_MAX_HEALTH
-
-
 func set_money(value: int):
 	_money = value
 	money_changed.emit(_money)
@@ -43,3 +38,8 @@ func add_money(value: int):
 func take_damage(value: int):
 	world_health = clampi(world_health - value, 0, WORLD_MAX_HEALTH)
 	world_health_changed.emit(world_health)
+
+
+func _init_game():
+	_money = 0
+	world_health = WORLD_MAX_HEALTH

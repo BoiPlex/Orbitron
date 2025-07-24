@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="TowerStats" load_steps=2 format=3 uid="uid://cjoo0taj1jhcs"]
+[gd_resource type="Resource" script_class="TowerStats" load_steps=3 format=3 uid="uid://cjoo0taj1jhcs"]
 
+[ext_resource type="Resource" uid="uid://bal7popik6k7r" path="res://resources/basic_ally_proj.tres" id="1_0okn4"]
 [ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="1_wmsc3"]
 
 [resource]
 script = ExtResource("1_wmsc3")
 cost = 100
-fire_rate = 1.0
+projectile = ExtResource("1_0okn4")
+fire_rate = 0.6
+spread_copies = 1
+spread_angle = 0.0
+bursts = 5
+burst_interval = 0.1
 detection_range = 200.0
-entity_name = ""
-max_health = 100
-contact_damage = 10
-mass = 10.0
+entity_name = "Gunner III"
+max_health = 200
+contact_damage = 100
+mass = 30.0
 metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"

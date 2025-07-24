@@ -24,9 +24,9 @@ func set_active_pool():
 func init_pool():
 	for i in range(PROJECTILE_MAX):
 		var proj = _projectile_scene.instantiate() as Projectile
-		proj.disable()
 		_pool.push_back(proj)
 		add_child(proj)
+		proj.disable()
 
 
 func _on_request_projectile(pos: Vector2, velocity: Vector2, stats: ProjectileStats):

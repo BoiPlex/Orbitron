@@ -10,6 +10,7 @@
 
 [node name="Projectile" type="CharacterBody2D"]
 script = ExtResource("1_softn")
+mass = 1.0
 metadata/_custom_type_script = "uid://c7cq1q0lnaglc"
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="."]

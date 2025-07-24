@@ -10,6 +10,6 @@ extends PhysicsBodyStats
 @export_group("Firing Mechanics")
 @export_range(0, 12.1) var spread_copies: int = 1
 @export_range(0, 2 * PI) var spread_angle: float = 0
-@export_range(0, 4.1) var bursts: int = 1
+@export_range(0, 22.1) var bursts: int = 1
 @export_range(0, 1.0) var burst_interval: float = 0
 @export var detection_range: float = 200

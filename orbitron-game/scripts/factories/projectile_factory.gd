@@ -19,6 +19,7 @@ func _ready():
 	_burst_timer = Timer.new()
 	_burst_timer.one_shot = true
 	_burst_timer.autostart = false
+	add_child(_burst_timer)
 
 
 func fire():

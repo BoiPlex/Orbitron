@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=3 format=3 uid="uid://buuvvd74r2kkp"]
+
+[ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="1_7g755"]
+[ext_resource type="Resource" uid="uid://s0olcfmcwr81" path="res://resources/repulsor_projectile.tres" id="1_dd3ta"]
+
+[resource]
+script = ExtResource("1_7g755")
+cost = 100
+projectile = ExtResource("1_dd3ta")
+fire_rate = 0.3
+spread_copies = 3
+spread_angle = 1.0
+bursts = 1
+burst_interval = 0.0
+detection_range = 100.0
+entity_name = ""
+max_health = 100
+contact_damage = 10
+contact_knockback = 1.0
+mass = 10.0
+metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"

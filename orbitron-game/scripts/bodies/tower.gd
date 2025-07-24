@@ -13,7 +13,7 @@ enum Orbit {
 	CCW,
 }
 
-@export var build_template: TowerStats = null
+@export var debug_build_template: TowerStats = null
 @export var projectile_factory: ProjectileFactory
 @export var orbit_speed: float = 40
 @export var orbit: Orbit = Orbit.CW
@@ -43,14 +43,14 @@ func _ready() -> void:
 	detection.area_entered.connect(_on_add_target)
 	detection.area_exited.connect(_on_remove_target)
 	target_check.connect(_on_target_check)
-	if build_template != null:
-		init_tower(build_template)
-		init_game_entity(build_template)
+	if debug_build_template != null:
+		init_tower(debug_build_template)
+		init_game_entity(debug_build_template)
 
 
 func init_tower(stats: TowerStats):
 	upgrades_to = stats.upgrades_to
-	if upgrades_to == null:
+	if upgrades_to != null:
 		upgrade_cost = upgrades_to.cost
 	fire_rate = stats.fire_rate
 	if fire_rate >= 0.0:
