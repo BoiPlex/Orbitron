@@ -45,11 +45,22 @@ func _init_spread():
 	_working_spread = 0
 	if copies % 2 == 0:
 		_working_spread += spread / 2
+		make()
+		_working_spread *= -1
+		make()
+		_working_spread *= -1
 		_remaining_copies -= 2
-		for i in _remaining_copies / 2:
-			pass
-			
-			
+	else:
+		make()
+		_remaining_copies -= 1
+	for i in range(_remaining_copies / 2):
+		_working_spread += spread
+		make()
+		_working_spread *= -1
+		make()
+		_working_spread *= -1
+
+
 func make():
 	var proj_stats = class_stats as ProjectileStats
 	make_position = global_position
