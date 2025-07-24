@@ -22,7 +22,7 @@ func _unhandled_input(event):
 			make()
 		elif _dev_click_mode == DevClickMode.DIRECT:
 			launch_speed = 7
-			launch_direction = player.global_position - make_position
+			launch_direction = (player.global_position - make_position).normalized()
 			make()
 		elif _dev_click_mode == DevClickMode.ORBITAL:
 			var dir_to_planet = player.global_position - make_position

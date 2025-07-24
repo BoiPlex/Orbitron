@@ -4,9 +4,11 @@ extends GamePhysicsBody
 var display_path: bool
 var pulled_to_fields: Array[GravityField]
 
+
 func _ready() -> void:
-	pass
-	
+	super()
+
+
 func add_field(field: GravityField):
 	if !pulled_to_fields.has(field):
 		pulled_to_fields.push_back(field)
