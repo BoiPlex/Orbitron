@@ -47,7 +47,6 @@ func disable():
 
 
 func enable():
-	print("asdfasdf")
 	visible = true
 	if hitbox:
 		hitbox.monitorable = true

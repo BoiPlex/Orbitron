@@ -62,8 +62,8 @@ scale = Vector2(0.2, 0.2)
 texture = SubResource("GradientTexture2D_jfguu")
 
 [node name="DetectionComponent" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 2
+collision_mask = 80
 script = ExtResource("5_jfguu")
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="DetectionComponent"]

@@ -6,6 +6,10 @@
 script = ExtResource("1_i0gep")
 cost = 100
 fire_rate = 1.0
+spread_copies = 1
+spread_angle = 0.0
+bursts = 1
+burst_interval = 0.0
 detection_range = 200.0
 entity_name = ""
 max_health = 100

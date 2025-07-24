@@ -25,7 +25,6 @@ func fire():
 	if _fire_lock:
 		return
 	_fire_lock = true
-	print("try fire")
 	_center_axis = launch_direction
 	_remaining_bursts = bursts
 	_init_burst()
@@ -51,7 +50,7 @@ func _init_spread():
 		make()
 		_working_spread *= -1
 		_remaining_copies -= 2
-	else:
+	else: 
 		make()
 		_remaining_copies -= 1
 	for i in range(_remaining_copies / 2):

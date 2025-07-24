@@ -30,7 +30,6 @@ func init_pool():
 
 
 func _on_request_projectile(pos: Vector2, velocity: Vector2, stats: ProjectileStats):
-	print(velocity)
 	var proj = _pool[_index]
 	if not proj.disabled:
 		proj.disable()
