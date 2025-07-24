@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ProjectileStats" load_steps=2 format=3 uid="uid://dbujadhdken3l"]
+
+[ext_resource type="Script" uid="uid://bdl3ke2ju4jip" path="res://scripts/resources/projectile_stats_template.gd" id="1_fcp80"]
+
+[resource]
+script = ExtResource("1_fcp80")
+initial_speed = 1000.0
+destroy_on_hit = false
+lifetime = 0.1
+entity_name = ""
+max_health = 100
+contact_damage = 30
+contact_knockback = 100.0
+mass = 1.0
+metadata/_custom_type_script = "uid://bdl3ke2ju4jip"

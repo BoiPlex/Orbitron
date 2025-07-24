@@ -50,6 +50,7 @@ func _ready() -> void:
 
 func init_tower(stats: TowerStats):
 	upgrades_to = stats.upgrades_to
+	orbit_speed = stats.orbiting_speed
 	if upgrades_to != null:
 		upgrade_cost = upgrades_to.cost
 	fire_rate = stats.fire_rate
@@ -114,7 +115,7 @@ func _physics_process(delta: float) -> void:
 	var tangent = (Vector2(-dir_to_planet.y, dir_to_planet.x).normalized() if 
 		orbit == Orbit.CCW else Vector2(dir_to_planet.y, -dir_to_planet.x).normalized())
 	var desired_velocity = tangent * orbit_speed
-	velocity = lerp(velocity, desired_velocity, 1 - pow(0.25, 13 * delta))
+	velocity = lerp(velocity, desired_velocity, 1 - pow(0.1, 20 * delta))
 	
 	if _state == States.ACTIVE:
 		target_dir = (target.global_position - global_position).normalized()

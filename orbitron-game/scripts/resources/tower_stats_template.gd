@@ -1,13 +1,13 @@
 class_name TowerStats
 extends PhysicsBodyStats
 
-@export_category("Upgrade Path")
+@export_group("Tower Properties")
 @export var upgrades_to: TowerStats
 @export var cost: int = 100
-@export_category("Offense")
+@export var orbiting_speed: float = 40
+@export_group("Firing")
 @export var projectile: ProjectileStats
 @export var fire_rate: float = 1
-@export_group("Firing Mechanics")
 @export_range(0, 12.1) var spread_copies: int = 1
 @export_range(0, 2 * PI) var spread_angle: float = 0
 @export_range(0, 22.1) var bursts: int = 1

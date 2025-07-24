@@ -8,6 +8,7 @@
 script = ExtResource("2_naraj")
 upgrades_to = ExtResource("3_naraj")
 cost = 100
+orbiting_speed = 40.0
 projectile = ExtResource("1_3n4p1")
 fire_rate = 0.3
 spread_copies = 6

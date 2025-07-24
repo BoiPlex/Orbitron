@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=4 format=3 uid="uid://c81ugxxb0bo5o"]
+
+[ext_resource type="Resource" uid="uid://dbujadhdken3l" path="res://resources/melee_proj.tres" id="1_8omnl"]
+[ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="1_71nee"]
+[ext_resource type="Resource" uid="uid://cb014gopfihqt" path="res://resources/melee_tower_II.tres" id="3_o04ps"]
+
+[resource]
+script = ExtResource("1_71nee")
+upgrades_to = ExtResource("3_o04ps")
+cost = 100
+orbiting_speed = 80.0
+projectile = ExtResource("1_8omnl")
+fire_rate = 4.0
+spread_copies = 1
+spread_angle = 0.0
+bursts = 1
+burst_interval = 0.0
+detection_range = 50.0
+entity_name = ""
+max_health = 200
+contact_damage = 10
+contact_knockback = 1.0
+mass = 10.0
+metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"
