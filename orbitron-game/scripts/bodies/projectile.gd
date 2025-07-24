@@ -17,6 +17,24 @@ func _ready():
 	lifetime_timer.start(initial_lifetime)
 
 
+func disable():
+	visible = false
+	if hitbox:
+		hitbox.monitorable = false
+		hitbox.monitoring = false
+	set_deferred("process_mode", PROCESS_MODE_DISABLED)
+	disabled = true
+
+
+func enable():
+	visible = true
+	if hitbox:
+		hitbox.monitorable = true
+		hitbox.monitoring = true
+	set_deferred("process_mode", PROCESS_MODE_INHERIT)
+	disabled = false
+
+
 func init_projectile(stats: ProjectileStats):
 	destroy_on_hit = stats.destroy_on_hit
 	initial_lifetime = stats.lifetime
@@ -35,21 +53,3 @@ func _kill():
 	if _no_kill:
 		return
 	disable()
-
-
-func disable():
-	visible = false
-	if hitbox:
-		hitbox.monitorable = false
-		hitbox.monitoring = false
-	set_deferred("process_mode", PROCESS_MODE_DISABLED)
-	disabled = true
-
-
-func enable():
-	visible = true
-	if hitbox:
-		hitbox.monitorable = true
-		hitbox.monitoring = true
-	set_deferred("process_mode", PROCESS_MODE_INHERIT)
-	disabled = false
