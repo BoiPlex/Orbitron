@@ -6,25 +6,29 @@ enum States {
 	STANDBY,
 }
 
-@export var fire_factories: Array[Factory]
+@export var projectile_factory: Factory
 
 var target: Node2D
 var target_dir: Vector2 = Vector2.ZERO
+
+var upgrades_to: TowerStats
+
 var _state: States = States.STANDBY
 
 @onready var player: Player = $"../Player"
-@onready var sprite: Sprite2D = $Sprite2D
-@onready var raycast: RayCast2D = $RayCast2D
 
 
 func _ready() -> void:
 	pass
 
 
+func init_tower(stats: TowerStats):
+	
+	pass
+
 
 func _fire():
-	for factory in fire_factories:
-		factory.launch_direction = target_dir
+	projectile_factory.launch_direction = target_dir
 
 
 func _physics_process(delta: float) -> void:

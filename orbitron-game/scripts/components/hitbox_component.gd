@@ -5,7 +5,7 @@ extends Area2D
 @export var damage: int
 
 @onready var parent = get_parent()
-
+@onready var collider = $ColoredCollider as CollisionShape2D
 
 func _ready():
 	collision_layer = 0

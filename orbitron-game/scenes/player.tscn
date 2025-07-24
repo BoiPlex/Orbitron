@@ -27,13 +27,15 @@ gravity_radius = 200.0
 [node name="HurtboxComponent" type="Area2D" parent="."]
 script = ExtResource("2_g2els")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+[node name="ColoredCollider" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CircleShape2D_qhqgy")
-debug_color = Color(0.988235, 0.917647, 0, 0.419608)
+debug_color = Color(1, 0.742, 0.14, 0.3)
+script = ExtResource("4_dqkch")
+metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qlg0r")
-debug_color = Color(0.781, 0.442, 0.486, 0.5)
+debug_color = Color(0.781, 0.442, 0.486, 0.3)
 script = ExtResource("4_dqkch")
 metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
 

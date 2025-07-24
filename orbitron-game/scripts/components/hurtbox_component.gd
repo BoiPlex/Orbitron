@@ -4,11 +4,13 @@ extends Area2D
 @export var team: TeamsGlobal.Team
 @export var max_health: int = 100	
 
-@onready var health: int = 100
-@onready var parent = get_parent() as GamePhysicsBody
+var health: int = 100
 
+@onready var parent = get_parent() as GamePhysicsBody
+@onready var collider = $ColoredCollider as CollisionShape2D
 
 func _ready() -> void:
+	health = max_health
 	collision_layer = TeamsGlobal.teamHurtbox[team]
 	collision_mask = 0
 	area_entered.connect(_on_area_entered)

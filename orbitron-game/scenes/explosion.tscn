@@ -154,15 +154,18 @@ is_anti_gravity = true
 [node name="ColoredCollider" parent="GravityField" index="0"]
 shape = SubResource("CircleShape2D_hbmxj")
 disabled = true
+debug_color = Color(0, 0.467, 1, 0.1)
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 script = ExtResource("3_3el85")
+team = null
+damage = null
 metadata/_custom_type_script = "uid://djiqi435icfju"
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_xfoey")
 disabled = true
-debug_color = Color(1, 0, 0, 0.5)
+debug_color = Color(1, 0, 0, 0.3)
 script = ExtResource("4_hbmxj")
 metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
 
