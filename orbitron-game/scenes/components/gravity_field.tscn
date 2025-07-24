@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_13ix6"]
 resource_local_to_scene = true
-radius = 200.0
+radius = 100.0
 
 [node name="GravityField" type="Area2D"]
 script = ExtResource("1_jc524")
@@ -15,6 +15,6 @@ metadata/_custom_type_script = "uid://dooqnerbe4uml"
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_13ix6")
-debug_color = Color(0, 0.467, 1, 0.5)
+debug_color = Color(0, 0.467, 1, 0.1)
 script = ExtResource("2_dfk4e")
 metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"

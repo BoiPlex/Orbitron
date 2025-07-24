@@ -7,13 +7,15 @@ extends Area2D
 @onready var parent = get_parent()
 @onready var collider = $ColoredCollider as CollisionShape2D
 
+
 func _ready():
-	collision_layer = 0
-	collision_mask = TeamsGlobal.teamHitbox[team]
+	collision_layer = TeamsGlobal.teamHitbox[team].x
+	collision_mask = TeamsGlobal.teamHitbox[team].y
 	area_entered.connect(_on_area_entered)
-	
+
 
 func _on_area_entered(area: Area2D):
+	print("asdfasdfasdfsadf")
 	if area is HurtboxComponent and area.get_parent() != parent:
 		if parent is GamePhysicsBody:
-			parent.hitbox_contact.emit()
+			parent.hitbox_contact.emit(area)

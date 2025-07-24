@@ -30,3 +30,13 @@ gdscript/warnings/int_as_enum_without_cast=0
 [display]
 
 window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="Collision"
+2d_physics/layer_2="Ally Hitbox"
+2d_physics/layer_3="Ally Hurtbox"
+2d_physics/layer_4="Enemy Hitbox"
+2d_physics/layer_5="Enemy Hurtbox"
+2d_physics/layer_6="Neutral Hitbox"
+2d_physics/layer_7="Neutral Hurtbox"

@@ -21,7 +21,7 @@ func _unhandled_input(event):
 			launch_speed = 0
 			make()
 		elif _dev_click_mode == DevClickMode.DIRECT:
-			launch_speed = 7
+			launch_speed = 20
 			launch_direction = (player.global_position - make_position).normalized()
 			make()
 		elif _dev_click_mode == DevClickMode.ORBITAL:

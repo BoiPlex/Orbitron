@@ -22,7 +22,7 @@ fill_to = Vector2(1, 1)
 script = ExtResource("1_ohywo")
 
 [node name="GravityField" parent="." instance=ExtResource("3_qhqgy")]
-gravity_radius = 200.0
+gravity_radius = 600.0
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 script = ExtResource("2_g2els")

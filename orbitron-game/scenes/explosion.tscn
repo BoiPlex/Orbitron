@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b662fh35tcfm5"]
+[gd_scene load_steps=10 format=3 uid="uid://b662fh35tcfm5"]
 
 [ext_resource type="Script" uid="uid://cae4mb6xry63n" path="res://scripts/explosion.gd" id="1_nfeox"]
-[ext_resource type="PackedScene" uid="uid://li3c1d3vqfqq" path="res://scenes/components/gravity_field.tscn" id="2_aw4cw"]
 [ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="3_3el85"]
 [ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="4_hbmxj"]
 [ext_resource type="Texture2D" uid="uid://cxyspm0b2tgqm" path="res://assets/explosion.png" id="5_hbmxj"]
@@ -39,18 +38,6 @@ tracks/2/path = NodePath("HitboxComponent/ColoredCollider:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("GravityField/ColoredCollider:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -96,25 +83,13 @@ tracks/2/keys = {
 "update": 1,
 "values": [true, false, true]
 }
-tracks/3/type = "value"
+tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GravityField/ColoredCollider:disabled")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "times": PackedFloat32Array(0.8),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -129,37 +104,29 @@ _data = {
 &"explode": SubResource("Animation_xfoey")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hbmxj"]
-resource_local_to_scene = true
-radius = 60.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_xfoey"]
 resource_local_to_scene = true
 radius = 40.0
 
-[node name="Explosion" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3el85"]
+
+[node name="Explosion" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_nfeox")
+pushable = false
+mass = 100.0
+contact_knockback = 6.0
+metadata/_custom_type_script = "uid://bbl5ggl7enrfh"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_cun36")
 }
 
-[node name="GravityField" parent="." instance=ExtResource("2_aw4cw")]
-gravity_strength = 100000.0
-gravity_radius = 60.0
-is_anti_gravity = true
-
-[node name="ColoredCollider" parent="GravityField" index="0"]
-shape = SubResource("CircleShape2D_hbmxj")
-disabled = true
-debug_color = Color(0, 0.467, 1, 0.1)
-
 [node name="HitboxComponent" type="Area2D" parent="."]
 script = ExtResource("3_3el85")
-team = null
-damage = null
+team = 2
+damage = 50
 metadata/_custom_type_script = "uid://djiqi435icfju"
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="HitboxComponent"]
@@ -174,4 +141,9 @@ visible = false
 texture = ExtResource("5_hbmxj")
 hframes = 12
 
-[editable path="GravityField"]
+[node name="ColoredCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3el85")
+disabled = true
+debug_color = Color(0.781, 0.442, 0.486, 0.3)
+script = ExtResource("4_hbmxj")
+metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"

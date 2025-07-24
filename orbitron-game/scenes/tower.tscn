@@ -31,8 +31,6 @@ metadata/_custom_type_script = "uid://wkf0om5bqdy"
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 script = ExtResource("2_jfguu")
-team = null
-damage = null
 metadata/_custom_type_script = "uid://djiqi435icfju"
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="HitboxComponent"]
@@ -43,8 +41,6 @@ metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
 
 [node name="HurtboxComponent" type="Area2D" parent="."]
 script = ExtResource("4_xl0gn")
-team = null
-max_health = null
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="HurtboxComponent"]
 shape = SubResource("CircleShape2D_qfw7u")
@@ -63,8 +59,9 @@ scale = Vector2(0.2, 0.2)
 texture = SubResource("GradientTexture2D_jfguu")
 
 [node name="DetectionComponent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("5_jfguu")
-team = null
 
 [node name="ColoredCollider" type="CollisionShape2D" parent="DetectionComponent"]
 shape = SubResource("CircleShape2D_jfguu")

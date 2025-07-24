@@ -9,18 +9,18 @@ var health: int = 100
 @onready var parent = get_parent() as GamePhysicsBody
 @onready var collider = $ColoredCollider as CollisionShape2D
 
+
 func _ready() -> void:
 	health = max_health
-	collision_layer = TeamsGlobal.teamHurtbox[team]
-	collision_mask = 0
+	collision_layer = TeamsGlobal.teamHurtbox[team].x
+	collision_mask = TeamsGlobal.teamHurtbox[team].y
 	area_entered.connect(_on_area_entered)
 
 
 func take_damage(damage: int):
 	health = clampi(health - damage, 0, max_health)
-	if health == 0:
+	if health == 0 and parent is GamePhysicsBody:
 		parent.init_kill.emit()
-			
 
 
 func _on_area_entered(area: Area2D) -> void:

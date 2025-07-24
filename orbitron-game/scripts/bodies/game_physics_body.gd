@@ -5,9 +5,12 @@ signal hitbox_contact(receiver: HurtboxComponent)
 signal hurtbox_contact(sender: HitboxComponent)
 signal init_kill
 
+const TERMINAL_VELOCITY = 20
+
 @export var entity_name: String
 @export var pushable: bool = true
 @export var mass: float = 10
+@export var contact_knockback: float = 1
 @export var make_on_kill: Array[Factory]
 
 @onready var sprite = get_node_or_null("Sprite2D") as Sprite2D
@@ -47,19 +50,25 @@ func init_game_entity(stats: PhysicsBodyStats):
 
 func force_push(push_dir: Vector2, force: float):
 	velocity += push_dir.normalized() * force / mass
+	velocity.clampf(0.0, TERMINAL_VELOCITY)
 
 
-func _on_hitbox_contact(_receiver: HurtboxComponent):
-	pass
+func _on_hitbox_contact(receiver: HurtboxComponent):
+	var target = receiver.parent
+	if pushable and target is GamePhysicsBody:
+		force_push(target.global_position.direction_to(global_position), 
+			(target.velocity.length() / 2 + target.contact_knockback) * target.mass)
 
 
 func _on_hurtbox_contact(sender: HitboxComponent):
-	if pushable and sender.parent is GamePhysicsBody:
-		force_push(sender.parent.velocity.normalized(), 
-			sender.parent.velocity.length() * sender.parent.mass)
+	var target = sender.parent
+	if pushable and target is GamePhysicsBody:
+		force_push(target.global_position.direction_to(global_position), 
+			(target.velocity.length() / 2 + target.contact_knockback) * target.mass)
 
 
 func _kill():
 	if not _no_kill:
 		for factory in make_on_kill:
 			factory.make()
+	queue_free()
