@@ -21,6 +21,12 @@ ColorGlobal="*res://scripts/color_global.gd"
 TeamsGlobal="*res://scripts/teams_global.gd"
 ReferencesGlobal="*res://scripts/references_global.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+gdscript/warnings/integer_division=0
+gdscript/warnings/int_as_enum_without_cast=0
+
 [display]
 
 window/stretch/mode="canvas_items"
