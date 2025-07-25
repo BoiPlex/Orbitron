@@ -8,6 +8,7 @@
 script = ExtResource("1_7g755")
 upgrades_to = ExtResource("3_3ig1v")
 cost = 100
+orbiting_speed = 40.0
 projectile = ExtResource("1_dd3ta")
 fire_rate = 0.4
 spread_copies = 2
@@ -15,7 +16,7 @@ spread_angle = 0.1
 bursts = 1
 burst_interval = 0.0
 detection_range = 100.0
-entity_name = ""
+entity_name = "Repulsor I"
 max_health = 100
 contact_damage = 10
 contact_knockback = 1.0
