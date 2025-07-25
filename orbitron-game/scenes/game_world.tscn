@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://oyknd2asn"]
+[gd_scene load_steps=8 format=3 uid="uid://oyknd2asn"]
 
 [ext_resource type="Script" uid="uid://cw4xtacqgcrfu" path="res://scripts/game_manager.gd" id="1_nd3ib"]
 [ext_resource type="PackedScene" uid="uid://bhwtdd4b235yl" path="res://scenes/player.tscn" id="2_ag5ty"]
@@ -6,12 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://c6g7jumv1icbe" path="res://scenes/test_body.tscn" id="4_0vfqx"]
 [ext_resource type="Script" uid="uid://di750aidn8r6w" path="res://scripts/projectile_pool.gd" id="5_wbbl4"]
 [ext_resource type="PackedScene" uid="uid://da7cbb55x2u75" path="res://scenes/hud_control.tscn" id="6_6c6v5"]
+[ext_resource type="Texture2D" uid="uid://nni73x76erl3" path="res://assets/bg.png" id="7_bhwwd"]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource("1_nd3ib")
 metadata/_custom_type_script = "uid://cw4xtacqgcrfu"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(3.8, 3.8)
+texture = ExtResource("7_bhwwd")
+
 [node name="Player" parent="." instance=ExtResource("2_ag5ty")]
+texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
