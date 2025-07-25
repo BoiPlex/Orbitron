@@ -6,7 +6,7 @@
 
 [node name="ShopButton" type="Button"]
 text = "Gunner I
-100"
+$100"
 icon = ExtResource("1_1oc1l")
 script = ExtResource("2_ujh1x")
 tower_target = ExtResource("3_a34ft")

@@ -54,7 +54,7 @@ alignment = 1
 [node name="ShopButton" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Gunner I
-100"
+$100"
 icon = ExtResource("2_nirq7")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("4_3lrex")
@@ -63,7 +63,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton2" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Gunner II
-220"
+$300"
 icon = ExtResource("5_t3ytc")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("6_fmihm")
@@ -72,7 +72,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton3" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Gunner III
-400"
+$600"
 icon = ExtResource("7_aaoju")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("8_rmfey")
@@ -81,7 +81,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton4" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Repulsor I
-200"
+$150"
 icon = ExtResource("9_e4l6w")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("10_upyyl")
@@ -90,7 +90,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton5" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Repulsor II
-300"
+$350"
 icon = ExtResource("11_3lrex")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("11_k1b1b")
@@ -99,7 +99,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton6" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Repulsor III
-400"
+$500"
 icon = ExtResource("12_e87te")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("13_yscu5")
@@ -108,7 +108,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton7" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Guardian I
-100"
+$100"
 icon = ExtResource("14_1c7n1")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("15_vuid0")
@@ -117,7 +117,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton8" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Guardian II
-250"
+$250"
 icon = ExtResource("16_1b3t5")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("17_s6ll4")
@@ -126,7 +126,7 @@ metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 [node name="ShopButton9" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
 text = "Guardian III
-500"
+$500"
 icon = ExtResource("18_m8t4p")
 script = ExtResource("3_g0w51")
 tower_target = ExtResource("19_5nxjk")
