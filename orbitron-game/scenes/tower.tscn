@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bact5q3bmxsrh" path="res://scripts/bodies/tower.gd" id="1_qrbg1"]
 [ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="2_jfguu"]
-[ext_resource type="Resource" uid="uid://bjdegyhfny7mk" path="res://resources/repulsor_tower_III.tres" id="2_xl0gn"]
+[ext_resource type="Resource" uid="uid://grck8mtpfay0" path="res://resources/shoot_tower_I.tres" id="2_xl0gn"]
 [ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="3_85u2j"]
 [ext_resource type="Script" uid="uid://bsmkv7habdqi5" path="res://scripts/components/hurtbox_component.gd" id="4_xl0gn"]
 [ext_resource type="Script" uid="uid://bhkkdgseo08jf" path="res://scripts/components/detection_component.gd" id="5_jfguu"]
