@@ -4,6 +4,14 @@ extends GravBodyFactory
 @export var target_position: Vector2
 
 
+func _ready():
+	set_active_tower_factory()
+
+
+func set_active_tower_factory():
+	ReferencesGlobal.tower_factory = self
+
+
 func make():
 	var tower_stats = class_stats as TowerStats
 	if tower_stats == null:

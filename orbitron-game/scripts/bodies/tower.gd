@@ -59,7 +59,6 @@ func init_tower(stats: TowerStats):
 	if upgrades_to != null:
 		upgrade_cost = upgrades_to.cost
 	fire_rate = stats.fire_rate
-	print(_fire_timer)
 	if fire_rate >= 0.0:
 		_fire_timer.wait_time = 1.0 / fire_rate
 	else:
@@ -158,10 +157,8 @@ func _physics_process(delta: float) -> void:
 		States.READYING:
 			var dir_to_ready = global_position.direction_to(ready_position)
 			var dist_to_ready = ready_position.distance_to(global_position)
-			print(dist_to_ready)
 			if dist_to_ready <= FINISH_READY_RADIUS:
 				finish_readying()
-				print("readysdfsdf")
 			else:
 				velocity = lerp(READYING_SPEED * dir_to_ready,
 				READYING_SPEED * dir_to_ready / 10, 

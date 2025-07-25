@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://oyknd2asn"]
+[gd_scene load_steps=9 format=3 uid="uid://oyknd2asn"]
 
 [ext_resource type="Script" uid="uid://cw4xtacqgcrfu" path="res://scripts/game_manager.gd" id="1_nd3ib"]
 [ext_resource type="PackedScene" uid="uid://bhwtdd4b235yl" path="res://scenes/player.tscn" id="2_ag5ty"]
 [ext_resource type="Script" uid="uid://bckxt6ra85lyg" path="res://scripts/factories/tower_factory.gd" id="2_pdbwf"]
 [ext_resource type="PackedScene" uid="uid://cfscq1mloc52k" path="res://scenes/tower.tscn" id="3_ywgp6"]
-[ext_resource type="PackedScene" uid="uid://c6g7jumv1icbe" path="res://scenes/test_body.tscn" id="4_0vfqx"]
 [ext_resource type="Resource" uid="uid://c81ugxxb0bo5o" path="res://resources/melee_tower_I.tres" id="4_u1jpj"]
 [ext_resource type="Script" uid="uid://di750aidn8r6w" path="res://scripts/projectile_pool.gd" id="5_wbbl4"]
 [ext_resource type="PackedScene" uid="uid://da7cbb55x2u75" path="res://scenes/hud_control.tscn" id="6_6c6v5"]
@@ -16,7 +15,7 @@ metadata/_custom_type_script = "uid://cw4xtacqgcrfu"
 
 [node name="TowerFactory" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
 script = ExtResource("2_pdbwf")
-target_position = Vector2(-90, -90)
+target_position = Vector2(200, 0)
 base_scene = ExtResource("3_ywgp6")
 parent = NodePath("..")
 class_stats = ExtResource("4_u1jpj")
@@ -31,24 +30,6 @@ texture = ExtResource("7_bhwwd")
 texture_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Tower" parent="." instance=ExtResource("3_ywgp6")]
-position = Vector2(65, 0)
-
-[node name="Tower2" parent="." instance=ExtResource("3_ywgp6")]
-position = Vector2(120, 0)
-
-[node name="Tower3" parent="." instance=ExtResource("3_ywgp6")]
-position = Vector2(175, 0)
-
-[node name="TestBody" parent="." instance=ExtResource("4_0vfqx")]
-position = Vector2(393, -61)
-
-[node name="TestBody2" parent="." instance=ExtResource("4_0vfqx")]
-position = Vector2(414, -33)
-
-[node name="TestBody3" parent="." instance=ExtResource("4_0vfqx")]
-position = Vector2(377, -31)
 
 [node name="ProjectilePool" type="Node2D" parent="."]
 unique_name_in_owner = true

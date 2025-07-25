@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://da7cbb55x2u75"]
+[gd_scene load_steps=22 format=3 uid="uid://da7cbb55x2u75"]
 
 [ext_resource type="Script" uid="uid://cj08odmwrik3i" path="res://scripts/UI/hud_control.gd" id="1_rx4kw"]
 [ext_resource type="Texture2D" uid="uid://63qwjkxeq0nc" path="res://assets/shoot1.png" id="2_nirq7"]
+[ext_resource type="Script" uid="uid://bryeeqqacmhqx" path="res://scripts/UI/shop_button.gd" id="3_g0w51"]
+[ext_resource type="Resource" uid="uid://grck8mtpfay0" path="res://resources/shoot_tower_I.tres" id="4_3lrex"]
+[ext_resource type="Texture2D" uid="uid://bxql1rxlrdxnb" path="res://assets/shoot2.png" id="5_t3ytc"]
+[ext_resource type="Resource" uid="uid://cs2ho6uqdkqa3" path="res://resources/shoot_tower_II.tres" id="6_fmihm"]
+[ext_resource type="Texture2D" uid="uid://dhgxpkenic5y3" path="res://assets/shoot3.png" id="7_aaoju"]
+[ext_resource type="Resource" uid="uid://cjoo0taj1jhcs" path="res://resources/shoot_tower_III.tres" id="8_rmfey"]
+[ext_resource type="Texture2D" uid="uid://0aivnv5j13e0" path="res://assets/repulse1.png" id="9_e4l6w"]
+[ext_resource type="Resource" uid="uid://buuvvd74r2kkp" path="res://resources/repulsor_tower_I.tres" id="10_upyyl"]
+[ext_resource type="Texture2D" uid="uid://bfyqq8xhqtvkb" path="res://assets/repulse2.png" id="11_3lrex"]
+[ext_resource type="Resource" uid="uid://b8uskbgmywfcl" path="res://resources/repulsor_tower_II.tres" id="11_k1b1b"]
+[ext_resource type="Texture2D" uid="uid://dtmvb5v86am3i" path="res://assets/repulse3.png" id="12_e87te"]
+[ext_resource type="Resource" uid="uid://bjdegyhfny7mk" path="res://resources/repulsor_tower_III.tres" id="13_yscu5"]
+[ext_resource type="Texture2D" uid="uid://cevqwon12rr3j" path="res://assets/melee1.png" id="14_1c7n1"]
+[ext_resource type="Resource" uid="uid://c81ugxxb0bo5o" path="res://resources/melee_tower_I.tres" id="15_vuid0"]
+[ext_resource type="Texture2D" uid="uid://w3lfir2r1kc8" path="res://assets/melee2.png" id="16_1b3t5"]
+[ext_resource type="Resource" uid="uid://cb014gopfihqt" path="res://resources/melee_tower_II.tres" id="17_s6ll4"]
+[ext_resource type="Texture2D" uid="uid://duqvxjmnyxsdv" path="res://assets/melee3.png" id="18_m8t4p"]
+[ext_resource type="Resource" uid="uid://cn5tupdtk0clw" path="res://resources/melee_tower_III.tres" id="19_5nxjk"]
+[ext_resource type="Script" uid="uid://bwgv02ig07807" path="res://scripts/UI/cash_money_indicator.gd" id="21_t3ytc"]
 
 [node name="HudControl" type="Control"]
 texture_filter = 3
@@ -20,38 +39,103 @@ grow_vertical = 2
 [node name="Control" type="Control" parent="AspectRatioContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/Control"]
+[node name="HBoxContainer" type="HFlowContainer" parent="AspectRatioContainer/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -16.0
-offset_right = 16.0
-offset_bottom = 8.0
+offset_left = -478.0
+offset_top = 163.0
+offset_right = 478.0
+offset_bottom = 843.0
 grow_horizontal = 2
+alignment = 1
 
-[node name="Button" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+[node name="ShopButton" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
 layout_mode = 2
-text = "Gunner"
+text = "Gunner I
+100"
 icon = ExtResource("2_nirq7")
-icon_alignment = 1
-vertical_icon_alignment = 2
-expand_icon = true
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("4_3lrex")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Control/HBoxContainer/Button"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ShopButton2" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Gunner II
+100"
+icon = ExtResource("5_t3ytc")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("6_fmihm")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
 
-[node name="Label" type="Label" parent="AspectRatioContainer/Control/HBoxContainer/Button"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="ShopButton3" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Gunner III
+100"
+icon = ExtResource("7_aaoju")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("8_rmfey")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
+
+[node name="ShopButton4" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Repulsor I
+100"
+icon = ExtResource("9_e4l6w")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("10_upyyl")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
+
+[node name="ShopButton5" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Repulsor II
+100"
+icon = ExtResource("11_3lrex")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("11_k1b1b")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
+
+[node name="ShopButton6" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Repulsor III
+100"
+icon = ExtResource("12_e87te")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("13_yscu5")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
+
+[node name="ShopButton7" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Guardian I
+100"
+icon = ExtResource("14_1c7n1")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("15_vuid0")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
+
+[node name="ShopButton8" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Guardian II
+100"
+icon = ExtResource("16_1b3t5")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("17_s6ll4")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
+
+[node name="ShopButton9" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Guardian III
+100"
+icon = ExtResource("18_m8t4p")
+script = ExtResource("3_g0w51")
+tower_target = ExtResource("19_5nxjk")
+metadata/_custom_type_script = "uid://bryeeqqacmhqx"
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Control"]
+layout_mode = 2
+offset_left = 335.0
+offset_top = 275.0
+offset_right = 336.0
+offset_bottom = 298.0
+script = ExtResource("21_t3ytc")
