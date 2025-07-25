@@ -68,7 +68,6 @@ func make():
 	make_position = global_position
 	launch_speed = proj_stats.initial_speed
 	launch_direction = _center_axis.rotated(_working_spread)
-	print(launch_direction)
 	ReferencesGlobal.projectile_pool.request_projectile.emit(
 		make_position, launch_direction * launch_speed, proj_stats
 	)

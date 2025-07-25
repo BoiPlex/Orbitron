@@ -19,7 +19,6 @@ func _ready() -> void:
 
 func take_damage(damage: int):
 	health = clampi(health - damage, 0, max_health)
-	print(damage)
 	if health == 0 and parent is GamePhysicsBody:
 		parent.init_kill.emit()
 
