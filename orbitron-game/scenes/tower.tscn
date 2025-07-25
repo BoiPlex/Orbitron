@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bact5q3bmxsrh" path="res://scripts/bodies/tower.gd" id="1_qrbg1"]
 [ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="2_jfguu"]
-[ext_resource type="Resource" uid="uid://grck8mtpfay0" path="res://resources/shoot_tower_I.tres" id="2_xl0gn"]
+[ext_resource type="Resource" uid="uid://cjoo0taj1jhcs" path="res://resources/shoot_tower_III.tres" id="2_xl0gn"]
 [ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="3_85u2j"]
 [ext_resource type="Script" uid="uid://bsmkv7habdqi5" path="res://scripts/components/hurtbox_component.gd" id="4_xl0gn"]
 [ext_resource type="Script" uid="uid://bhkkdgseo08jf" path="res://scripts/components/detection_component.gd" id="5_jfguu"]
@@ -27,6 +27,7 @@ resource_local_to_scene = true
 radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfguu"]
+resource_local_to_scene = true
 radius = 111.0
 
 [node name="Tower" type="CharacterBody2D" node_paths=PackedStringArray("projectile_factory")]
@@ -78,3 +79,5 @@ metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
 [node name="ProjectileFactory" type="Node2D" parent="."]
 script = ExtResource("6_85u2j")
 metadata/_custom_type_script = "uid://drbp4v7pj8glb"
+
+[node name="Timer" type="Timer" parent="."]

@@ -21,6 +21,7 @@ ColorGlobal="*res://scripts/color_global.gd"
 TeamsGlobal="*res://scripts/teams_global.gd"
 ReferencesGlobal="*res://scripts/references_global.gd"
 GameStateGlobal="*res://scripts/game_state_global.gd"
+CursorGlobal="*res://scripts/cursor_global.gd"
 
 [debug]
 

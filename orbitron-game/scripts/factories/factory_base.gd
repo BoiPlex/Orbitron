@@ -1,6 +1,9 @@
 class_name Factory
 extends Node2D
 
+@export var force_make: bool:
+	set(x):
+		make()
 @export var base_scene: PackedScene
 @export var parent: Node
 @export var class_stats: PhysicsBodyStats

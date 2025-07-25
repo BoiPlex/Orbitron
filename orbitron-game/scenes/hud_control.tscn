@@ -1,30 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://da7cbb55x2u75"]
+[gd_scene load_steps=3 format=3 uid="uid://da7cbb55x2u75"]
 
 [ext_resource type="Script" uid="uid://cj08odmwrik3i" path="res://scripts/UI/hud_control.gd" id="1_rx4kw"]
+[ext_resource type="Texture2D" uid="uid://63qwjkxeq0nc" path="res://assets/shoot1.png" id="2_nirq7"]
 
 [node name="HudControl" type="Control"]
+texture_filter = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_rx4kw")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_right = 16.0
+offset_bottom = 8.0
+grow_horizontal = 2
+
+[node name="Button" type="Button" parent="AspectRatioContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "Gunner"
+icon = ExtResource("2_nirq7")
+icon_alignment = 1
+vertical_icon_alignment = 2
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/Control/HBoxContainer/Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="AspectRatioContainer/Control/HBoxContainer/Button"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -40.0
-offset_right = 16.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="Button" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="Button2" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="Button3" type="Button" parent="HBoxContainer"]
-layout_mode = 2
