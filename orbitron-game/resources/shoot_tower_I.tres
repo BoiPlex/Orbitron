@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="1_7qfe8"]
 [ext_resource type="Resource" uid="uid://bal7popik6k7r" path="res://resources/basic_ally_proj.tres" id="1_ey7u4"]
 [ext_resource type="Resource" uid="uid://cs2ho6uqdkqa3" path="res://resources/shoot_tower_II.tres" id="3_bc5ax"]
-[ext_resource type="Texture2D" uid="uid://0aivnv5j13e0" path="res://assets/repulse1.png" id="3_r8fdl"]
+[ext_resource type="Texture2D" uid="uid://63qwjkxeq0nc" path="res://assets/shoot1.png" id="3_r8fdl"]
 
 [resource]
 script = ExtResource("1_7qfe8")

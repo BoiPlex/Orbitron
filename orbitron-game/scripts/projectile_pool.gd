@@ -37,6 +37,7 @@ func _on_request_projectile(pos: Vector2, velocity: Vector2, stats: ProjectileSt
 	proj.init_projectile(stats)
 	proj.global_position = pos
 	proj.velocity = velocity
+	proj.sprite.rotation = velocity.angle()
 	proj.enable()
 	
 	_index += 1

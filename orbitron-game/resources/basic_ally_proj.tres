@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ProjectileStats" load_steps=3 format=3 uid="uid://bal7popik6k7r"]
 
 [ext_resource type="Script" uid="uid://bdl3ke2ju4jip" path="res://scripts/resources/projectile_stats_template.gd" id="1_tgpor"]
-[ext_resource type="Texture2D" uid="uid://1gfdlpqbdq6i" path="res://icon.svg" id="2_fm77b"]
+[ext_resource type="Texture2D" uid="uid://bktys4mgw7o0" path="res://assets/gunproj.png" id="2_fm77b"]
 
 [resource]
 script = ExtResource("1_tgpor")

@@ -2,26 +2,29 @@
 
 [ext_resource type="Script" uid="uid://bact5q3bmxsrh" path="res://scripts/bodies/tower.gd" id="1_qrbg1"]
 [ext_resource type="Script" uid="uid://djiqi435icfju" path="res://scripts/components/hitbox_component.gd" id="2_jfguu"]
-[ext_resource type="Resource" uid="uid://cs2ho6uqdkqa3" path="res://resources/shoot_tower_II.tres" id="2_xl0gn"]
+[ext_resource type="Resource" uid="uid://bjdegyhfny7mk" path="res://resources/repulsor_tower_III.tres" id="2_xl0gn"]
 [ext_resource type="Script" uid="uid://c7wj8tj6k5kjl" path="res://scripts/components/colored_collider.gd" id="3_85u2j"]
 [ext_resource type="Script" uid="uid://bsmkv7habdqi5" path="res://scripts/components/hurtbox_component.gd" id="4_xl0gn"]
 [ext_resource type="Script" uid="uid://bhkkdgseo08jf" path="res://scripts/components/detection_component.gd" id="5_jfguu"]
 [ext_resource type="Script" uid="uid://drbp4v7pj8glb" path="res://scripts/factories/projectile_factory.gd" id="6_85u2j"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vqps3"]
-resource_local_to_scene = true
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qfw7u"]
-resource_local_to_scene = true
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p8022"]
-resource_local_to_scene = true
 
 [sub_resource type="Gradient" id="Gradient_qrbg1"]
 colors = PackedColorArray(0.619926, 0.365044, 0, 1, 0.620571, 0.354512, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jfguu"]
 gradient = SubResource("Gradient_qrbg1")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqps3"]
+resource_local_to_scene = true
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfw7u"]
+resource_local_to_scene = true
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8022"]
+resource_local_to_scene = true
+radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jfguu"]
 radius = 111.0
@@ -31,6 +34,10 @@ script = ExtResource("1_qrbg1")
 debug_build_template = ExtResource("2_xl0gn")
 projectile_factory = NodePath("ProjectileFactory")
 metadata/_custom_type_script = "uid://wkf0om5bqdy"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = SubResource("GradientTexture2D_jfguu")
 
 [node name="HitboxComponent" type="Area2D" parent="."]
 script = ExtResource("2_jfguu")
@@ -56,10 +63,6 @@ shape = SubResource("CircleShape2D_p8022")
 debug_color = Color(0.781, 0.442, 0.486, 0.3)
 script = ExtResource("3_85u2j")
 metadata/_custom_type_script = "uid://c7wj8tj6k5kjl"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = SubResource("GradientTexture2D_jfguu")
 
 [node name="DetectionComponent" type="Area2D" parent="."]
 collision_layer = 2
