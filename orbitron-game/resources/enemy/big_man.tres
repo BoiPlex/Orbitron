@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://2ctqutancb1c"]
+
+[ext_resource type="Script" uid="uid://dq06u5yhvgpt5" path="res://scripts/resources/enemy_stats_template.gd" id="1_d2ih5"]
+[ext_resource type="Texture2D" uid="uid://dbipniubxl7pn" path="res://assets/enemy2.png" id="2_3nlxv"]
+
+[resource]
+script = ExtResource("1_d2ih5")
+speed = 15.0
+bounty = 50
+cost = 12
+min_difficulty = 30
+max_difficulty = 50000
+sprite_texture = ExtResource("2_3nlxv")
+entity_name = "Titan Fighter"
+max_health = 250
+contact_damage = 50
+contact_knockback = 1.0
+mass = 20.0
+metadata/_custom_type_script = "uid://dq06u5yhvgpt5"

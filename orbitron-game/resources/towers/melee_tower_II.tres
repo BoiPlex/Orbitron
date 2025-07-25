@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="TowerStats" load_steps=5 format=3 uid="uid://cb014gopfihqt"]
 
-[ext_resource type="Resource" uid="uid://dbujadhdken3l" path="res://resources/melee_proj.tres" id="1_vpdqb"]
+[ext_resource type="Resource" uid="uid://dbujadhdken3l" path="res://resources/towers/melee_proj.tres" id="1_vpdqb"]
 [ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="2_f2ioy"]
-[ext_resource type="Resource" uid="uid://cn5tupdtk0clw" path="res://resources/melee_tower_III.tres" id="3_f2ioy"]
+[ext_resource type="Resource" uid="uid://cn5tupdtk0clw" path="res://resources/towers/melee_tower_III.tres" id="3_f2ioy"]
 [ext_resource type="Texture2D" uid="uid://w3lfir2r1kc8" path="res://assets/melee2.png" id="3_uocc1"]
 
 [resource]
 script = ExtResource("2_f2ioy")
 upgrades_to = ExtResource("3_f2ioy")
-cost = 100
+cost = 250
 orbiting_speed = 120.0
 projectile = ExtResource("1_vpdqb")
 fire_rate = 20.0

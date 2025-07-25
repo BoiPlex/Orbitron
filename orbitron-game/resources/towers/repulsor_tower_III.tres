@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=4 format=3 uid="uid://bjdegyhfny7mk"]
+
+[ext_resource type="Resource" uid="uid://s0olcfmcwr81" path="res://resources/towers/repulsor_projectile.tres" id="1_dkt8p"]
+[ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="2_e01gb"]
+[ext_resource type="Texture2D" uid="uid://dtmvb5v86am3i" path="res://assets/repulse3.png" id="3_vru38"]
+
+[resource]
+script = ExtResource("2_e01gb")
+cost = 500
+orbiting_speed = 40.0
+projectile = ExtResource("1_dkt8p")
+fire_rate = 0.3
+spread_copies = 12
+spread_angle = 0.1
+bursts = 1
+burst_interval = 0.0
+detection_range = 180.0
+sprite_texture = ExtResource("3_vru38")
+entity_name = "Repulsor III"
+max_health = 300
+contact_damage = 10
+contact_knockback = 1.0
+mass = 100.0
+metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"

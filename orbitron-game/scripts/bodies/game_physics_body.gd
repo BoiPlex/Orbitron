@@ -49,6 +49,29 @@ func init_game_entity(stats: PhysicsBodyStats):
 	contact_knockback = stats.contact_knockback
 
 
+func disable_self():
+	if hitbox:
+		hitbox.set_deferred("monitorable", false)
+		hitbox.set_deferred("monitoring", false)
+	if hurtbox:
+		hurtbox.set_deferred("monitorable", false)
+		hurtbox.set_deferred("monitoring", false)
+	if collider:
+		collider.set_deferred("disabled", true)
+	hide()
+
+
+func enable_self():
+	if hitbox:
+		hitbox.set_deferred("monitorable", true)
+		hitbox.set_deferred("monitoring", true)
+	if hurtbox:
+		hurtbox.set_deferred("monitorable", true)
+		hurtbox.set_deferred("monitoring", true)
+	if collider:
+		collider.set_deferred("disabled", false)
+
+
 func force_push(push_dir: Vector2, force: float):
 	velocity += push_dir.normalized() * force / mass
 	velocity.clampf(0.0, TERMINAL_VELOCITY)

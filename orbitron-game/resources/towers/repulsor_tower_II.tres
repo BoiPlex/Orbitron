@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=5 format=3 uid="uid://b8uskbgmywfcl"]
+
+[ext_resource type="Resource" uid="uid://s0olcfmcwr81" path="res://resources/towers/repulsor_projectile.tres" id="1_e7irt"]
+[ext_resource type="Script" uid="uid://b3qwo5g5sgdgc" path="res://scripts/resources/tower_stats_template.gd" id="2_71luo"]
+[ext_resource type="Texture2D" uid="uid://bfyqq8xhqtvkb" path="res://assets/repulse2.png" id="3_vdpex"]
+[ext_resource type="Resource" uid="uid://bjdegyhfny7mk" path="res://resources/towers/repulsor_tower_III.tres" id="4_eyq74"]
+
+[resource]
+script = ExtResource("2_71luo")
+upgrades_to = ExtResource("4_eyq74")
+cost = 350
+orbiting_speed = 40.0
+projectile = ExtResource("1_e7irt")
+fire_rate = 0.3
+spread_copies = 6
+spread_angle = 0.11
+bursts = 1
+burst_interval = 0.0
+detection_range = 140.0
+sprite_texture = ExtResource("3_vdpex")
+entity_name = "Repulsor II"
+max_health = 200
+contact_damage = 10
+contact_knockback = 1.0
+mass = 50.0
+metadata/_custom_type_script = "uid://b3qwo5g5sgdgc"

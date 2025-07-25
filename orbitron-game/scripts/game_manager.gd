@@ -10,7 +10,7 @@ var _debug_spawner: DebugBodyFactory
 
 var explosion_spawner: ExplosionFactory
 var _explosion_cooldown_timer: Timer
-var explosion_cooldown: float = 0.5
+var explosion_cooldown: float = 0.2
 
 
 @onready var player: Player = $Player

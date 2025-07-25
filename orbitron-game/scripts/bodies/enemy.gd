@@ -42,12 +42,18 @@ func _physics_process(delta):
 			else:
 				target_direction = global_position.direction_to(target.global_position)
 				direction = Vector2.from_angle(lerp_angle(direction.angle(), target_direction.angle(), 
-				1 - pow(0.25, 13 * delta)))
-				velocity = direction * clampf(velocity.length(), speed, INF)
+				1 - pow(0.25, delta)))
+				
+				velocity = lerp(velocity, direction * speed, 1 - pow(0.25, delta))
+				sprite.rotation = velocity.angle()
+				
 		States.INACTIVE:
 			pass
 
 
 func _kill():
 	GameStateGlobal.add_money(bounty)
+	disable_self()
+	$AudioStreamPlayer2D.play()
+	await $AudioStreamPlayer2D.finished
 	super()

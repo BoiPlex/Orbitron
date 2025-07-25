@@ -1,25 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://oyknd2asn"]
+[gd_scene load_steps=14 format=3 uid="uid://oyknd2asn"]
 
 [ext_resource type="Script" uid="uid://cw4xtacqgcrfu" path="res://scripts/game_manager.gd" id="1_nd3ib"]
 [ext_resource type="PackedScene" uid="uid://bhwtdd4b235yl" path="res://scenes/player.tscn" id="2_ag5ty"]
+[ext_resource type="Script" uid="uid://dok02u77o6vxd" path="res://scripts/factories/enemy_factory.gd" id="2_odt01"]
 [ext_resource type="Script" uid="uid://bckxt6ra85lyg" path="res://scripts/factories/tower_factory.gd" id="2_pdbwf"]
+[ext_resource type="Script" uid="uid://dq06u5yhvgpt5" path="res://scripts/resources/enemy_stats_template.gd" id="3_6ll7h"]
 [ext_resource type="PackedScene" uid="uid://cfscq1mloc52k" path="res://scenes/tower.tscn" id="3_ywgp6"]
-[ext_resource type="Resource" uid="uid://c81ugxxb0bo5o" path="res://resources/melee_tower_I.tres" id="4_u1jpj"]
+[ext_resource type="Resource" uid="uid://bn2t35hwr4f3a" path="res://resources/enemy/fighter.tres" id="4_dlaip"]
+[ext_resource type="Resource" uid="uid://c81ugxxb0bo5o" path="res://resources/towers/melee_tower_I.tres" id="4_u1jpj"]
+[ext_resource type="PackedScene" uid="uid://bteh3jtoj0xk2" path="res://scenes/enemy.tscn" id="5_u4x5r"]
 [ext_resource type="Script" uid="uid://di750aidn8r6w" path="res://scripts/projectile_pool.gd" id="5_wbbl4"]
 [ext_resource type="PackedScene" uid="uid://da7cbb55x2u75" path="res://scenes/hud_control.tscn" id="6_6c6v5"]
+[ext_resource type="Resource" uid="uid://2ctqutancb1c" path="res://resources/enemy/big_man.tres" id="7_6ll7h"]
 [ext_resource type="Texture2D" uid="uid://nni73x76erl3" path="res://assets/bg.png" id="7_bhwwd"]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource("1_nd3ib")
+dev_mode = false
 metadata/_custom_type_script = "uid://cw4xtacqgcrfu"
-
-[node name="TowerFactory" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
-script = ExtResource("2_pdbwf")
-target_position = Vector2(200, 0)
-base_scene = ExtResource("3_ywgp6")
-parent = NodePath("..")
-class_stats = ExtResource("4_u1jpj")
-metadata/_custom_type_script = "uid://bckxt6ra85lyg"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -29,6 +27,21 @@ texture = ExtResource("7_bhwwd")
 [node name="Player" parent="." instance=ExtResource("2_ag5ty")]
 texture_filter = 1
 
+[node name="EnemyFactory" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
+script = ExtResource("2_odt01")
+enemy_list_candidates = Array[ExtResource("3_6ll7h")]([ExtResource("4_dlaip"), ExtResource("7_6ll7h")])
+base_scene = ExtResource("5_u4x5r")
+parent = NodePath("..")
+metadata/_custom_type_script = "uid://dok02u77o6vxd"
+
+[node name="TowerFactory" type="Node2D" parent="." node_paths=PackedStringArray("parent")]
+script = ExtResource("2_pdbwf")
+target_position = Vector2(200, 0)
+base_scene = ExtResource("3_ywgp6")
+parent = NodePath("..")
+class_stats = ExtResource("4_u1jpj")
+metadata/_custom_type_script = "uid://bckxt6ra85lyg"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ProjectilePool" type="Node2D" parent="."]
@@ -36,3 +49,6 @@ unique_name_in_owner = true
 script = ExtResource("5_wbbl4")
 
 [node name="HudControl" parent="." instance=ExtResource("6_6c6v5")]
+z_index = 1
+offset_left = -2.0
+offset_right = -2.0

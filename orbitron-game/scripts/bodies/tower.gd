@@ -174,3 +174,10 @@ func _orbit_velocity(delta: float):
 		orbit == Orbit.CCW else Vector2(dir_to_planet.y, -dir_to_planet.x).normalized())
 	var desired_velocity = tangent * orbit_speed
 	velocity = lerp(velocity, desired_velocity, 1 - pow(0.1, 20 * delta))
+
+
+func _kill():
+	disable_self()
+	$AudioStreamPlayer2D.play()
+	await $AudioStreamPlayer2D.finished
+	super()

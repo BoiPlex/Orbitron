@@ -5,15 +5,18 @@ extends Button
 
 @export var tower_target: TowerStats:
 	set(x):
-		text = str(x.entity_name, "\n", x.cost)
+		text = str(x.entity_name, "\n$", x.cost)
 		icon = x.sprite_texture
 		tower_target = x
 
 
 func _ready():
+	if Engine.is_editor_hint():
+		tower_target = tower_target
 	if not Engine.is_editor_hint():
 		GameStateGlobal.money_changed.connect(_on_money_changed)
 		button_down.connect(_on_click)
+		_on_money_changed(GameStateGlobal.get_money())
 	
 
 func _on_click():
@@ -23,7 +26,7 @@ func _on_click():
 
 
 func _on_money_changed(value: int):
-	if value > tower_target.cost:
+	if value >= tower_target.cost:
 		modulate = Color(1.0, 1.0, 1.0)
 	else:
 		modulate = Color(0.5, 0.5, 0.5)

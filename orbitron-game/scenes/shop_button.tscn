@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://63qwjkxeq0nc" path="res://assets/shoot1.png" id="1_1oc1l"]
 [ext_resource type="Script" uid="uid://bryeeqqacmhqx" path="res://scripts/UI/shop_button.gd" id="2_ujh1x"]
-[ext_resource type="Resource" uid="uid://grck8mtpfay0" path="res://resources/shoot_tower_I.tres" id="3_a34ft"]
+[ext_resource type="Resource" uid="uid://grck8mtpfay0" path="res://resources/towers/shoot_tower_I.tres" id="3_a34ft"]
 
 [node name="ShopButton" type="Button"]
 text = "Gunner I

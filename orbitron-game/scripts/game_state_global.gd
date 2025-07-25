@@ -6,10 +6,11 @@ signal finish_game
 signal money_changed(new_value: int)
 signal world_health_changed(new_value: int)
 
-const STARTING_CASH: int = 9999
+const STARTING_CASH: int = 100
 const WORLD_MAX_HEALTH: int = 1000
 
 var world_health: int = 1000
+var difficulty: int = 5
 
 var _money: int = 0
 var _active_world: GameWorld
@@ -17,6 +18,7 @@ var _active_world: GameWorld
 
 func _ready():
 	start_game.connect(_init_game)
+	difficulty = 5
 	set_money(STARTING_CASH)
 
 
@@ -34,7 +36,6 @@ func get_money() -> int:
 
 func set_money(value: int):
 	_money = value
-	print("value")
 	money_changed.emit(_money)
 
 

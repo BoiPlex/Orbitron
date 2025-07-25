@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://bn2t35hwr4f3a"]
+
+[ext_resource type="Script" uid="uid://dq06u5yhvgpt5" path="res://scripts/resources/enemy_stats_template.gd" id="1_hn5i4"]
+[ext_resource type="Texture2D" uid="uid://cqwst3e2bq7wj" path="res://assets/enemy1.png" id="2_k5lm6"]
+
+[resource]
+script = ExtResource("1_hn5i4")
+speed = 20.0
+bounty = 20
+cost = 2
+min_difficulty = 0
+max_difficulty = 100
+sprite_texture = ExtResource("2_k5lm6")
+entity_name = "Fighter"
+max_health = 80
+contact_damage = 30
+contact_knockback = 1.0
+mass = 5.0
+metadata/_custom_type_script = "uid://dq06u5yhvgpt5"
